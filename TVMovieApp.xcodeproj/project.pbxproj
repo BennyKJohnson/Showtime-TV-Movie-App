@@ -1,0 +1,526 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		A36F4DA51CE5834C00DDFC85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36F4DA41CE5834C00DDFC85 /* AppDelegate.swift */; };
+		A36F4DA81CE5834C00DDFC85 /* TVMovieApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A36F4DA61CE5834C00DDFC85 /* TVMovieApp.xcdatamodeld */; };
+		A36F4DAA1CE5834C00DDFC85 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36F4DA91CE5834C00DDFC85 /* MasterViewController.swift */; };
+		A36F4DAC1CE5834C00DDFC85 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36F4DAB1CE5834C00DDFC85 /* DetailViewController.swift */; };
+		A36F4DAF1CE5834C00DDFC85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A36F4DAD1CE5834C00DDFC85 /* Main.storyboard */; };
+		A36F4DB11CE5834C00DDFC85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A36F4DB01CE5834C00DDFC85 /* Assets.xcassets */; };
+		A36F4DB41CE5834C00DDFC85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A36F4DB21CE5834C00DDFC85 /* LaunchScreen.storyboard */; };
+		A36F4DBF1CE5834C00DDFC85 /* TVMovieAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36F4DBE1CE5834C00DDFC85 /* TVMovieAppTests.swift */; };
+		A36F4DCA1CE5834C00DDFC85 /* TVMovieAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36F4DC91CE5834C00DDFC85 /* TVMovieAppUITests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		A36F4DBB1CE5834C00DDFC85 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A36F4D991CE5834C00DDFC85 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A36F4DA01CE5834C00DDFC85;
+			remoteInfo = TVMovieApp;
+		};
+		A36F4DC61CE5834C00DDFC85 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = A36F4D991CE5834C00DDFC85 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = A36F4DA01CE5834C00DDFC85;
+			remoteInfo = TVMovieApp;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		A36F4DA11CE5834C00DDFC85 /* TVMovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVMovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A36F4DA41CE5834C00DDFC85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		A36F4DA71CE5834C00DDFC85 /* TVMovieApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TVMovieApp.xcdatamodel; sourceTree = "<group>"; };
+		A36F4DA91CE5834C00DDFC85 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
+		A36F4DAB1CE5834C00DDFC85 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A36F4DAE1CE5834C00DDFC85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		A36F4DB01CE5834C00DDFC85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		A36F4DB31CE5834C00DDFC85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		A36F4DB51CE5834C00DDFC85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A36F4DBA1CE5834C00DDFC85 /* TVMovieAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TVMovieAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A36F4DBE1CE5834C00DDFC85 /* TVMovieAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVMovieAppTests.swift; sourceTree = "<group>"; };
+		A36F4DC01CE5834C00DDFC85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A36F4DC51CE5834C00DDFC85 /* TVMovieAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TVMovieAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A36F4DC91CE5834C00DDFC85 /* TVMovieAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVMovieAppUITests.swift; sourceTree = "<group>"; };
+		A36F4DCB1CE5834C00DDFC85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		A36F4D9E1CE5834C00DDFC85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A36F4DB71CE5834C00DDFC85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A36F4DC21CE5834C00DDFC85 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		A36F4D981CE5834C00DDFC85 = {
+			isa = PBXGroup;
+			children = (
+				A36F4DA31CE5834C00DDFC85 /* TVMovieApp */,
+				A36F4DBD1CE5834C00DDFC85 /* TVMovieAppTests */,
+				A36F4DC81CE5834C00DDFC85 /* TVMovieAppUITests */,
+				A36F4DA21CE5834C00DDFC85 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		A36F4DA21CE5834C00DDFC85 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				A36F4DA11CE5834C00DDFC85 /* TVMovieApp.app */,
+				A36F4DBA1CE5834C00DDFC85 /* TVMovieAppTests.xctest */,
+				A36F4DC51CE5834C00DDFC85 /* TVMovieAppUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		A36F4DA31CE5834C00DDFC85 /* TVMovieApp */ = {
+			isa = PBXGroup;
+			children = (
+				A36F4DA41CE5834C00DDFC85 /* AppDelegate.swift */,
+				A36F4DA91CE5834C00DDFC85 /* MasterViewController.swift */,
+				A36F4DAB1CE5834C00DDFC85 /* DetailViewController.swift */,
+				A36F4DAD1CE5834C00DDFC85 /* Main.storyboard */,
+				A36F4DB01CE5834C00DDFC85 /* Assets.xcassets */,
+				A36F4DB21CE5834C00DDFC85 /* LaunchScreen.storyboard */,
+				A36F4DB51CE5834C00DDFC85 /* Info.plist */,
+				A36F4DA61CE5834C00DDFC85 /* TVMovieApp.xcdatamodeld */,
+			);
+			path = TVMovieApp;
+			sourceTree = "<group>";
+		};
+		A36F4DBD1CE5834C00DDFC85 /* TVMovieAppTests */ = {
+			isa = PBXGroup;
+			children = (
+				A36F4DBE1CE5834C00DDFC85 /* TVMovieAppTests.swift */,
+				A36F4DC01CE5834C00DDFC85 /* Info.plist */,
+			);
+			path = TVMovieAppTests;
+			sourceTree = "<group>";
+		};
+		A36F4DC81CE5834C00DDFC85 /* TVMovieAppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				A36F4DC91CE5834C00DDFC85 /* TVMovieAppUITests.swift */,
+				A36F4DCB1CE5834C00DDFC85 /* Info.plist */,
+			);
+			path = TVMovieAppUITests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		A36F4DA01CE5834C00DDFC85 /* TVMovieApp */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A36F4DCE1CE5834C00DDFC85 /* Build configuration list for PBXNativeTarget "TVMovieApp" */;
+			buildPhases = (
+				A36F4D9D1CE5834C00DDFC85 /* Sources */,
+				A36F4D9E1CE5834C00DDFC85 /* Frameworks */,
+				A36F4D9F1CE5834C00DDFC85 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = TVMovieApp;
+			productName = TVMovieApp;
+			productReference = A36F4DA11CE5834C00DDFC85 /* TVMovieApp.app */;
+			productType = "com.apple.product-type.application";
+		};
+		A36F4DB91CE5834C00DDFC85 /* TVMovieAppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A36F4DD11CE5834C00DDFC85 /* Build configuration list for PBXNativeTarget "TVMovieAppTests" */;
+			buildPhases = (
+				A36F4DB61CE5834C00DDFC85 /* Sources */,
+				A36F4DB71CE5834C00DDFC85 /* Frameworks */,
+				A36F4DB81CE5834C00DDFC85 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A36F4DBC1CE5834C00DDFC85 /* PBXTargetDependency */,
+			);
+			name = TVMovieAppTests;
+			productName = TVMovieAppTests;
+			productReference = A36F4DBA1CE5834C00DDFC85 /* TVMovieAppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		A36F4DC41CE5834C00DDFC85 /* TVMovieAppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A36F4DD41CE5834C00DDFC85 /* Build configuration list for PBXNativeTarget "TVMovieAppUITests" */;
+			buildPhases = (
+				A36F4DC11CE5834C00DDFC85 /* Sources */,
+				A36F4DC21CE5834C00DDFC85 /* Frameworks */,
+				A36F4DC31CE5834C00DDFC85 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				A36F4DC71CE5834C00DDFC85 /* PBXTargetDependency */,
+			);
+			name = TVMovieAppUITests;
+			productName = TVMovieAppUITests;
+			productReference = A36F4DC51CE5834C00DDFC85 /* TVMovieAppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		A36F4D991CE5834C00DDFC85 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0730;
+				LastUpgradeCheck = 0730;
+				ORGANIZATIONNAME = CSCI342;
+				TargetAttributes = {
+					A36F4DA01CE5834C00DDFC85 = {
+						CreatedOnToolsVersion = 7.3;
+					};
+					A36F4DB91CE5834C00DDFC85 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = A36F4DA01CE5834C00DDFC85;
+					};
+					A36F4DC41CE5834C00DDFC85 = {
+						CreatedOnToolsVersion = 7.3;
+						TestTargetID = A36F4DA01CE5834C00DDFC85;
+					};
+				};
+			};
+			buildConfigurationList = A36F4D9C1CE5834C00DDFC85 /* Build configuration list for PBXProject "TVMovieApp" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = A36F4D981CE5834C00DDFC85;
+			productRefGroup = A36F4DA21CE5834C00DDFC85 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				A36F4DA01CE5834C00DDFC85 /* TVMovieApp */,
+				A36F4DB91CE5834C00DDFC85 /* TVMovieAppTests */,
+				A36F4DC41CE5834C00DDFC85 /* TVMovieAppUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		A36F4D9F1CE5834C00DDFC85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A36F4DB41CE5834C00DDFC85 /* LaunchScreen.storyboard in Resources */,
+				A36F4DB11CE5834C00DDFC85 /* Assets.xcassets in Resources */,
+				A36F4DAF1CE5834C00DDFC85 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A36F4DB81CE5834C00DDFC85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A36F4DC31CE5834C00DDFC85 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		A36F4D9D1CE5834C00DDFC85 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A36F4DA81CE5834C00DDFC85 /* TVMovieApp.xcdatamodeld in Sources */,
+				A36F4DA51CE5834C00DDFC85 /* AppDelegate.swift in Sources */,
+				A36F4DAA1CE5834C00DDFC85 /* MasterViewController.swift in Sources */,
+				A36F4DAC1CE5834C00DDFC85 /* DetailViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A36F4DB61CE5834C00DDFC85 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A36F4DBF1CE5834C00DDFC85 /* TVMovieAppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A36F4DC11CE5834C00DDFC85 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				A36F4DCA1CE5834C00DDFC85 /* TVMovieAppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		A36F4DBC1CE5834C00DDFC85 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A36F4DA01CE5834C00DDFC85 /* TVMovieApp */;
+			targetProxy = A36F4DBB1CE5834C00DDFC85 /* PBXContainerItemProxy */;
+		};
+		A36F4DC71CE5834C00DDFC85 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = A36F4DA01CE5834C00DDFC85 /* TVMovieApp */;
+			targetProxy = A36F4DC61CE5834C00DDFC85 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		A36F4DAD1CE5834C00DDFC85 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A36F4DAE1CE5834C00DDFC85 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		A36F4DB21CE5834C00DDFC85 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				A36F4DB31CE5834C00DDFC85 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		A36F4DCC1CE5834C00DDFC85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		A36F4DCD1CE5834C00DDFC85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		A36F4DCF1CE5834C00DDFC85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TVMovieApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = au.com.benjaminjohnson.TVMovieApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		A36F4DD01CE5834C00DDFC85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				INFOPLIST_FILE = TVMovieApp/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = au.com.benjaminjohnson.TVMovieApp;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		A36F4DD21CE5834C00DDFC85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TVMovieAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = au.com.benjaminjohnson.TVMovieAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TVMovieApp.app/TVMovieApp";
+			};
+			name = Debug;
+		};
+		A36F4DD31CE5834C00DDFC85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = TVMovieAppTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = au.com.benjaminjohnson.TVMovieAppTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TVMovieApp.app/TVMovieApp";
+			};
+			name = Release;
+		};
+		A36F4DD51CE5834C00DDFC85 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TVMovieAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = au.com.benjaminjohnson.TVMovieAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TVMovieApp;
+			};
+			name = Debug;
+		};
+		A36F4DD61CE5834C00DDFC85 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				INFOPLIST_FILE = TVMovieAppUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = au.com.benjaminjohnson.TVMovieAppUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = TVMovieApp;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		A36F4D9C1CE5834C00DDFC85 /* Build configuration list for PBXProject "TVMovieApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A36F4DCC1CE5834C00DDFC85 /* Debug */,
+				A36F4DCD1CE5834C00DDFC85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A36F4DCE1CE5834C00DDFC85 /* Build configuration list for PBXNativeTarget "TVMovieApp" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A36F4DCF1CE5834C00DDFC85 /* Debug */,
+				A36F4DD01CE5834C00DDFC85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A36F4DD11CE5834C00DDFC85 /* Build configuration list for PBXNativeTarget "TVMovieAppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A36F4DD21CE5834C00DDFC85 /* Debug */,
+				A36F4DD31CE5834C00DDFC85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+		A36F4DD41CE5834C00DDFC85 /* Build configuration list for PBXNativeTarget "TVMovieAppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				A36F4DD51CE5834C00DDFC85 /* Debug */,
+				A36F4DD61CE5834C00DDFC85 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		A36F4DA61CE5834C00DDFC85 /* TVMovieApp.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				A36F4DA71CE5834C00DDFC85 /* TVMovieApp.xcdatamodel */,
+			);
+			currentVersion = A36F4DA71CE5834C00DDFC85 /* TVMovieApp.xcdatamodel */;
+			path = TVMovieApp.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
+	};
+	rootObject = A36F4D991CE5834C00DDFC85 /* Project object */;
+}
