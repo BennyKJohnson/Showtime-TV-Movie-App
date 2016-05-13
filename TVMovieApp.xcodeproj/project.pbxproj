@@ -16,6 +16,7 @@
 		A36F4DB41CE5834C00DDFC85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A36F4DB21CE5834C00DDFC85 /* LaunchScreen.storyboard */; };
 		A36F4DBF1CE5834C00DDFC85 /* TVMovieAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36F4DBE1CE5834C00DDFC85 /* TVMovieAppTests.swift */; };
 		A36F4DCA1CE5834C00DDFC85 /* TVMovieAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36F4DC91CE5834C00DDFC85 /* TVMovieAppUITests.swift */; };
+		A36F4DD91CE5898900DDFC85 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A36F4DD81CE5898900DDFC85 /* Alamofire.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		A36F4DC51CE5834C00DDFC85 /* TVMovieAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TVMovieAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A36F4DC91CE5834C00DDFC85 /* TVMovieAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVMovieAppUITests.swift; sourceTree = "<group>"; };
 		A36F4DCB1CE5834C00DDFC85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		A36F4DD81CE5898900DDFC85 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A36F4DD91CE5898900DDFC85 /* Alamofire.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +84,7 @@
 		A36F4D981CE5834C00DDFC85 = {
 			isa = PBXGroup;
 			children = (
+				A36F4DD81CE5898900DDFC85 /* Alamofire.framework */,
 				A36F4DA31CE5834C00DDFC85 /* TVMovieApp */,
 				A36F4DBD1CE5834C00DDFC85 /* TVMovieAppTests */,
 				A36F4DC81CE5834C00DDFC85 /* TVMovieAppUITests */,
@@ -101,6 +105,7 @@
 		A36F4DA31CE5834C00DDFC85 /* TVMovieApp */ = {
 			isa = PBXGroup;
 			children = (
+				A36F4DD71CE5863B00DDFC85 /* Models */,
 				A36F4DA41CE5834C00DDFC85 /* AppDelegate.swift */,
 				A36F4DA91CE5834C00DDFC85 /* MasterViewController.swift */,
 				A36F4DAB1CE5834C00DDFC85 /* DetailViewController.swift */,
@@ -131,6 +136,13 @@
 			path = TVMovieAppUITests;
 			sourceTree = "<group>";
 		};
+		A36F4DD71CE5863B00DDFC85 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,6 +153,7 @@
 				A36F4D9D1CE5834C00DDFC85 /* Sources */,
 				A36F4D9E1CE5834C00DDFC85 /* Frameworks */,
 				A36F4D9F1CE5834C00DDFC85 /* Resources */,
+				A36F4DDA1CE58A4100DDFC85 /* ShellScript */,
 			);
 			buildRules = (
 			);
@@ -256,6 +269,23 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		A36F4DDA1CE58A4100DDFC85 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Alamofire.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		A36F4D9D1CE5834C00DDFC85 /* Sources */ = {
@@ -407,6 +437,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TVMovieApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = au.com.benjaminjohnson.TVMovieApp;
@@ -418,6 +452,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = TVMovieApp/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = au.com.benjaminjohnson.TVMovieApp;

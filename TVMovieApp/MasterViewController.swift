@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Alamofire
 
 class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
