@@ -17,6 +17,17 @@
 		A36F4DBF1CE5834C00DDFC85 /* TVMovieAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36F4DBE1CE5834C00DDFC85 /* TVMovieAppTests.swift */; };
 		A36F4DCA1CE5834C00DDFC85 /* TVMovieAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36F4DC91CE5834C00DDFC85 /* TVMovieAppUITests.swift */; };
 		A36F4DD91CE5898900DDFC85 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A36F4DD81CE5898900DDFC85 /* Alamofire.framework */; };
+		A3EB3B9E1CEECDFD004C9D12 /* TVMClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EB3B9D1CEECDFD004C9D12 /* TVMClient.swift */; };
+		A3EB3BA51CEEE09B004C9D12 /* Movie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EB3B9F1CEEE09B004C9D12 /* Movie+CoreDataProperties.swift */; };
+		A3EB3BA61CEEE09B004C9D12 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EB3BA01CEEE09B004C9D12 /* Movie.swift */; };
+		A3EB3BA71CEEE09B004C9D12 /* Show+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EB3BA11CEEE09B004C9D12 /* Show+CoreDataProperties.swift */; };
+		A3EB3BA81CEEE09B004C9D12 /* Show.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EB3BA21CEEE09B004C9D12 /* Show.swift */; };
+		A3EB3BA91CEEE09B004C9D12 /* Film+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EB3BA31CEEE09B004C9D12 /* Film+CoreDataProperties.swift */; };
+		A3EB3BAA1CEEE09B004C9D12 /* Film.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EB3BA41CEEE09B004C9D12 /* Film.swift */; };
+		A3EB3BAC1CEEEBA0004C9D12 /* TVDBRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EB3BAB1CEEEBA0004C9D12 /* TVDBRequest.swift */; };
+		A3EB3BAE1CEEED2E004C9D12 /* MovieDBRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EB3BAD1CEEED2E004C9D12 /* MovieDBRequest.swift */; };
+		A3EB3BB21CEF17F2004C9D12 /* Episode+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EB3BB01CEF17F2004C9D12 /* Episode+CoreDataProperties.swift */; };
+		A3EB3BB31CEF17F2004C9D12 /* Episode.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EB3BB11CEF17F2004C9D12 /* Episode.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +64,17 @@
 		A36F4DC91CE5834C00DDFC85 /* TVMovieAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVMovieAppUITests.swift; sourceTree = "<group>"; };
 		A36F4DCB1CE5834C00DDFC85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A36F4DD81CE5898900DDFC85 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
+		A3EB3B9D1CEECDFD004C9D12 /* TVMClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVMClient.swift; sourceTree = "<group>"; };
+		A3EB3B9F1CEEE09B004C9D12 /* Movie+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Movie+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A3EB3BA01CEEE09B004C9D12 /* Movie.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
+		A3EB3BA11CEEE09B004C9D12 /* Show+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Show+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A3EB3BA21CEEE09B004C9D12 /* Show.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Show.swift; sourceTree = "<group>"; };
+		A3EB3BA31CEEE09B004C9D12 /* Film+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Film+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A3EB3BA41CEEE09B004C9D12 /* Film.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Film.swift; sourceTree = "<group>"; };
+		A3EB3BAB1CEEEBA0004C9D12 /* TVDBRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TVDBRequest.swift; sourceTree = "<group>"; };
+		A3EB3BAD1CEEED2E004C9D12 /* MovieDBRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MovieDBRequest.swift; sourceTree = "<group>"; };
+		A3EB3BB01CEF17F2004C9D12 /* Episode+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Episode+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		A3EB3BB11CEF17F2004C9D12 /* Episode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Episode.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +127,7 @@
 		A36F4DA31CE5834C00DDFC85 /* TVMovieApp */ = {
 			isa = PBXGroup;
 			children = (
+				A3EB3BAF1CEEEE1C004C9D12 /* API */,
 				A36F4DD71CE5863B00DDFC85 /* Models */,
 				A36F4DA41CE5834C00DDFC85 /* AppDelegate.swift */,
 				A36F4DA91CE5834C00DDFC85 /* MasterViewController.swift */,
@@ -114,6 +137,7 @@
 				A36F4DB21CE5834C00DDFC85 /* LaunchScreen.storyboard */,
 				A36F4DB51CE5834C00DDFC85 /* Info.plist */,
 				A36F4DA61CE5834C00DDFC85 /* TVMovieApp.xcdatamodeld */,
+				A3EB3B9D1CEECDFD004C9D12 /* TVMClient.swift */,
 			);
 			path = TVMovieApp;
 			sourceTree = "<group>";
@@ -139,8 +163,25 @@
 		A36F4DD71CE5863B00DDFC85 /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				A3EB3BB01CEF17F2004C9D12 /* Episode+CoreDataProperties.swift */,
+				A3EB3BB11CEF17F2004C9D12 /* Episode.swift */,
+				A3EB3B9F1CEEE09B004C9D12 /* Movie+CoreDataProperties.swift */,
+				A3EB3BA01CEEE09B004C9D12 /* Movie.swift */,
+				A3EB3BA11CEEE09B004C9D12 /* Show+CoreDataProperties.swift */,
+				A3EB3BA21CEEE09B004C9D12 /* Show.swift */,
+				A3EB3BA31CEEE09B004C9D12 /* Film+CoreDataProperties.swift */,
+				A3EB3BA41CEEE09B004C9D12 /* Film.swift */,
 			);
 			name = Models;
+			sourceTree = "<group>";
+		};
+		A3EB3BAF1CEEEE1C004C9D12 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				A3EB3BAB1CEEEBA0004C9D12 /* TVDBRequest.swift */,
+				A3EB3BAD1CEEED2E004C9D12 /* MovieDBRequest.swift */,
+			);
+			name = API;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -292,9 +333,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A3EB3BA61CEEE09B004C9D12 /* Movie.swift in Sources */,
+				A3EB3BAC1CEEEBA0004C9D12 /* TVDBRequest.swift in Sources */,
+				A3EB3BB21CEF17F2004C9D12 /* Episode+CoreDataProperties.swift in Sources */,
 				A36F4DA81CE5834C00DDFC85 /* TVMovieApp.xcdatamodeld in Sources */,
 				A36F4DA51CE5834C00DDFC85 /* AppDelegate.swift in Sources */,
+				A3EB3BAE1CEEED2E004C9D12 /* MovieDBRequest.swift in Sources */,
+				A3EB3B9E1CEECDFD004C9D12 /* TVMClient.swift in Sources */,
+				A3EB3BA71CEEE09B004C9D12 /* Show+CoreDataProperties.swift in Sources */,
 				A36F4DAA1CE5834C00DDFC85 /* MasterViewController.swift in Sources */,
+				A3EB3BAA1CEEE09B004C9D12 /* Film.swift in Sources */,
+				A3EB3BA81CEEE09B004C9D12 /* Show.swift in Sources */,
+				A3EB3BA91CEEE09B004C9D12 /* Film+CoreDataProperties.swift in Sources */,
+				A3EB3BA51CEEE09B004C9D12 /* Movie+CoreDataProperties.swift in Sources */,
+				A3EB3BB31CEF17F2004C9D12 /* Episode.swift in Sources */,
 				A36F4DAC1CE5834C00DDFC85 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -528,6 +580,7 @@
 				A36F4DD01CE5834C00DDFC85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A36F4DD11CE5834C00DDFC85 /* Build configuration list for PBXNativeTarget "TVMovieAppTests" */ = {
 			isa = XCConfigurationList;
@@ -536,6 +589,7 @@
 				A36F4DD31CE5834C00DDFC85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A36F4DD41CE5834C00DDFC85 /* Build configuration list for PBXNativeTarget "TVMovieAppUITests" */ = {
 			isa = XCConfigurationList;
@@ -544,6 +598,7 @@
 				A36F4DD61CE5834C00DDFC85 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
