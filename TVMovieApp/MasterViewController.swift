@@ -17,12 +17,12 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
     var searchController:UISearchController!// = UISearchController(searchResultsController: nil)!
     
-    var client: TVMClient!
+    var client: ShowtimeClient!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        client = TVMClient(context: managedObjectContext!)
+        client = ShowtimeClient(context: managedObjectContext!)
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
 
@@ -62,7 +62,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         let context = self.fetchedResultsController.managedObjectContext
         let entity = self.fetchedResultsController.fetchRequest.entity!
         
-        let film = Show(entity: NSEntityDescription.entityForName("Show", inManagedObjectContext: managedObjectContext!)!, insertIntoManagedObjectContext: context)
+        let film = Show(entity: entity, insertIntoManagedObjectContext: context)
         
         film.name = "My Film"
         film.genre = ""

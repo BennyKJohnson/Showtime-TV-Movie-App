@@ -13,7 +13,7 @@ import CoreData
 
 
 
-final class TVMClient {
+final class ShowtimeClient {
     
     var tvdbAuthKey: String?
     
@@ -165,9 +165,9 @@ final class TVMClient {
                 if let data = dictionary["data"] as? [String: AnyObject] {
                    
                     // Create TV Show
-                    let filmEntity = NSEntityDescription.entityForName("Film", inManagedObjectContext: self.managedObjectContext)!
+                    let showEntity = NSEntityDescription.entityForName("Show", inManagedObjectContext: self.managedObjectContext)!
                     
-                    let show = Film(entity: filmEntity, insertIntoManagedObjectContext: nil)
+                    let show = Show(entity: showEntity, insertIntoManagedObjectContext: nil)
                     show.name = data["seriesName"] as! String
                     show.identifier = data["seriesId"] as! String
                     show.releaseDate = NSDate()
@@ -175,7 +175,12 @@ final class TVMClient {
                     show.posterURL = TVDBRequest.bannerURL + (data["banner"] as! String)
                     show.overview = data["overview"] as! String
                     show.genre = (data["genre"] as! [String]).first!
-                                      
+                    show.network = data["network"] as! String
+                    show.airsDayOfWeek = data["airsDayOfWeek"] as! String
+                    show.airsTime = data["airsTime"] as! String
+                    show.runtime = data["runtime"] as! NSNumber
+                    
+                    
                     completition(film: show, error: nil)
                     return
                 } else {
