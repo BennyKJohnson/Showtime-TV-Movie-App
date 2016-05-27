@@ -197,7 +197,7 @@ final class TVMClient {
                     show.rating = data["siteRating"] as! NSNumber
                     show.posterURL = data["banner"] as! String
                     show.overview = data["overview"] as! String
-                    show.genre = (data["genre"] as! [String]).first
+                    show.genre = (data["genre"] as! [String]).first!
                     /*
  film.name = "My Film"
  film.genre = ""

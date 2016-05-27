@@ -14,14 +14,14 @@ import CoreData
 
 extension Film {
 
-    @NSManaged var name: String?
+    @NSManaged var name: String
     @NSManaged var runtime: NSNumber?
     @NSManaged var releaseDate: NSDate?
-    @NSManaged var overview: String?
-    @NSManaged var posterURL: String?
-    @NSManaged var rating: NSNumber?
-    @NSManaged var genre: String?
-    @NSManaged var identifier: String?
+    @NSManaged var overview: String
+    @NSManaged var posterURL: String
+    @NSManaged var rating: NSNumber
+    @NSManaged var genre: String
+    @NSManaged var identifier: String
     @NSManaged var status: NSNumber?
 
 }

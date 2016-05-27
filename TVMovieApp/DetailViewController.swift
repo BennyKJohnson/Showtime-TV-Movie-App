@@ -31,7 +31,7 @@ class DetailViewController: UITableViewController {
             title = film.name
             
             cells = []
-            cells.append(DetailCellType.DescriptionCell(title: "Description", body: film.overview!))
+            cells.append(DetailCellType.DescriptionCell(title: "Description", body: film.overview))
             
         }
     }

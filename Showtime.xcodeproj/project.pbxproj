@@ -55,7 +55,7 @@
 		A3666CC31CF7DD770097389F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A3666CC51CF7EB3C0097389F /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A3666CC71CF7ED030097389F /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewCell.swift; sourceTree = "<group>"; };
-		A36F4DA11CE5834C00DDFC85 /* TVMovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVMovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A36F4DA11CE5834C00DDFC85 /* Showtime.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Showtime.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A36F4DA41CE5834C00DDFC85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A36F4DA71CE5834C00DDFC85 /* TVMovieApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TVMovieApp.xcdatamodel; sourceTree = "<group>"; };
 		A36F4DA91CE5834C00DDFC85 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
@@ -63,10 +63,10 @@
 		A36F4DB01CE5834C00DDFC85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A36F4DB31CE5834C00DDFC85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A36F4DB51CE5834C00DDFC85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A36F4DBA1CE5834C00DDFC85 /* TVMovieAppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TVMovieAppTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A36F4DBA1CE5834C00DDFC85 /* ShowtimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShowtimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A36F4DBE1CE5834C00DDFC85 /* TVMovieAppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVMovieAppTests.swift; sourceTree = "<group>"; };
 		A36F4DC01CE5834C00DDFC85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		A36F4DC51CE5834C00DDFC85 /* TVMovieAppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TVMovieAppUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		A36F4DC51CE5834C00DDFC85 /* ShowtimeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ShowtimeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		A36F4DC91CE5834C00DDFC85 /* TVMovieAppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TVMovieAppUITests.swift; sourceTree = "<group>"; };
 		A36F4DCB1CE5834C00DDFC85 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A36F4DD81CE5898900DDFC85 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = Carthage/Build/iOS/Alamofire.framework; sourceTree = "<group>"; };
@@ -123,9 +123,9 @@
 		A36F4DA21CE5834C00DDFC85 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				A36F4DA11CE5834C00DDFC85 /* TVMovieApp.app */,
-				A36F4DBA1CE5834C00DDFC85 /* TVMovieAppTests.xctest */,
-				A36F4DC51CE5834C00DDFC85 /* TVMovieAppUITests.xctest */,
+				A36F4DA11CE5834C00DDFC85 /* Showtime.app */,
+				A36F4DBA1CE5834C00DDFC85 /* ShowtimeTests.xctest */,
+				A36F4DC51CE5834C00DDFC85 /* ShowtimeTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -196,9 +196,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		A36F4DA01CE5834C00DDFC85 /* TVMovieApp */ = {
+		A36F4DA01CE5834C00DDFC85 /* Showtime */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A36F4DCE1CE5834C00DDFC85 /* Build configuration list for PBXNativeTarget "TVMovieApp" */;
+			buildConfigurationList = A36F4DCE1CE5834C00DDFC85 /* Build configuration list for PBXNativeTarget "Showtime" */;
 			buildPhases = (
 				A36F4D9D1CE5834C00DDFC85 /* Sources */,
 				A36F4D9E1CE5834C00DDFC85 /* Frameworks */,
@@ -209,14 +209,14 @@
 			);
 			dependencies = (
 			);
-			name = TVMovieApp;
+			name = Showtime;
 			productName = TVMovieApp;
-			productReference = A36F4DA11CE5834C00DDFC85 /* TVMovieApp.app */;
+			productReference = A36F4DA11CE5834C00DDFC85 /* Showtime.app */;
 			productType = "com.apple.product-type.application";
 		};
-		A36F4DB91CE5834C00DDFC85 /* TVMovieAppTests */ = {
+		A36F4DB91CE5834C00DDFC85 /* ShowtimeTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A36F4DD11CE5834C00DDFC85 /* Build configuration list for PBXNativeTarget "TVMovieAppTests" */;
+			buildConfigurationList = A36F4DD11CE5834C00DDFC85 /* Build configuration list for PBXNativeTarget "ShowtimeTests" */;
 			buildPhases = (
 				A36F4DB61CE5834C00DDFC85 /* Sources */,
 				A36F4DB71CE5834C00DDFC85 /* Frameworks */,
@@ -227,14 +227,14 @@
 			dependencies = (
 				A36F4DBC1CE5834C00DDFC85 /* PBXTargetDependency */,
 			);
-			name = TVMovieAppTests;
+			name = ShowtimeTests;
 			productName = TVMovieAppTests;
-			productReference = A36F4DBA1CE5834C00DDFC85 /* TVMovieAppTests.xctest */;
+			productReference = A36F4DBA1CE5834C00DDFC85 /* ShowtimeTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		A36F4DC41CE5834C00DDFC85 /* TVMovieAppUITests */ = {
+		A36F4DC41CE5834C00DDFC85 /* ShowtimeUITests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = A36F4DD41CE5834C00DDFC85 /* Build configuration list for PBXNativeTarget "TVMovieAppUITests" */;
+			buildConfigurationList = A36F4DD41CE5834C00DDFC85 /* Build configuration list for PBXNativeTarget "ShowtimeUITests" */;
 			buildPhases = (
 				A36F4DC11CE5834C00DDFC85 /* Sources */,
 				A36F4DC21CE5834C00DDFC85 /* Frameworks */,
@@ -245,9 +245,9 @@
 			dependencies = (
 				A36F4DC71CE5834C00DDFC85 /* PBXTargetDependency */,
 			);
-			name = TVMovieAppUITests;
+			name = ShowtimeUITests;
 			productName = TVMovieAppUITests;
-			productReference = A36F4DC51CE5834C00DDFC85 /* TVMovieAppUITests.xctest */;
+			productReference = A36F4DC51CE5834C00DDFC85 /* ShowtimeTests.xctest */;
 			productType = "com.apple.product-type.bundle.ui-testing";
 		};
 /* End PBXNativeTarget section */
@@ -273,7 +273,7 @@
 					};
 				};
 			};
-			buildConfigurationList = A36F4D9C1CE5834C00DDFC85 /* Build configuration list for PBXProject "TVMovieApp" */;
+			buildConfigurationList = A36F4D9C1CE5834C00DDFC85 /* Build configuration list for PBXProject "Showtime" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -286,9 +286,9 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				A36F4DA01CE5834C00DDFC85 /* TVMovieApp */,
-				A36F4DB91CE5834C00DDFC85 /* TVMovieAppTests */,
-				A36F4DC41CE5834C00DDFC85 /* TVMovieAppUITests */,
+				A36F4DA01CE5834C00DDFC85 /* Showtime */,
+				A36F4DB91CE5834C00DDFC85 /* ShowtimeTests */,
+				A36F4DC41CE5834C00DDFC85 /* ShowtimeUITests */,
 			);
 		};
 /* End PBXProject section */
@@ -384,12 +384,12 @@
 /* Begin PBXTargetDependency section */
 		A36F4DBC1CE5834C00DDFC85 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A36F4DA01CE5834C00DDFC85 /* TVMovieApp */;
+			target = A36F4DA01CE5834C00DDFC85 /* Showtime */;
 			targetProxy = A36F4DBB1CE5834C00DDFC85 /* PBXContainerItemProxy */;
 		};
 		A36F4DC71CE5834C00DDFC85 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = A36F4DA01CE5834C00DDFC85 /* TVMovieApp */;
+			target = A36F4DA01CE5834C00DDFC85 /* Showtime */;
 			targetProxy = A36F4DC61CE5834C00DDFC85 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -534,8 +534,8 @@
 				INFOPLIST_FILE = TVMovieAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = au.com.benjaminjohnson.TVMovieAppTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TVMovieApp.app/TVMovieApp";
+				PRODUCT_NAME = ShowtimeTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Showtime.app/Showtime";
 			};
 			name = Debug;
 		};
@@ -546,8 +546,8 @@
 				INFOPLIST_FILE = TVMovieAppTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = au.com.benjaminjohnson.TVMovieAppTests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/TVMovieApp.app/TVMovieApp";
+				PRODUCT_NAME = ShowtimeTests;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Showtime.app/Showtime";
 			};
 			name = Release;
 		};
@@ -557,7 +557,7 @@
 				INFOPLIST_FILE = TVMovieAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = au.com.benjaminjohnson.TVMovieAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ShowtimeTests;
 				TEST_TARGET_NAME = TVMovieApp;
 			};
 			name = Debug;
@@ -568,7 +568,7 @@
 				INFOPLIST_FILE = TVMovieAppUITests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = au.com.benjaminjohnson.TVMovieAppUITests;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = ShowtimeTests;
 				TEST_TARGET_NAME = TVMovieApp;
 			};
 			name = Release;
@@ -576,7 +576,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		A36F4D9C1CE5834C00DDFC85 /* Build configuration list for PBXProject "TVMovieApp" */ = {
+		A36F4D9C1CE5834C00DDFC85 /* Build configuration list for PBXProject "Showtime" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A36F4DCC1CE5834C00DDFC85 /* Debug */,
@@ -585,7 +585,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A36F4DCE1CE5834C00DDFC85 /* Build configuration list for PBXNativeTarget "TVMovieApp" */ = {
+		A36F4DCE1CE5834C00DDFC85 /* Build configuration list for PBXNativeTarget "Showtime" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A36F4DCF1CE5834C00DDFC85 /* Debug */,
@@ -594,7 +594,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A36F4DD11CE5834C00DDFC85 /* Build configuration list for PBXNativeTarget "TVMovieAppTests" */ = {
+		A36F4DD11CE5834C00DDFC85 /* Build configuration list for PBXNativeTarget "ShowtimeTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A36F4DD21CE5834C00DDFC85 /* Debug */,
@@ -603,7 +603,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		A36F4DD41CE5834C00DDFC85 /* Build configuration list for PBXNativeTarget "TVMovieAppUITests" */ = {
+		A36F4DD41CE5834C00DDFC85 /* Build configuration list for PBXNativeTarget "ShowtimeUITests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				A36F4DD51CE5834C00DDFC85 /* Debug */,

@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A36F4DA01CE5834C00DDFC85"
-               BuildableName = "TVMovieApp.app"
-               BlueprintName = "TVMovieApp"
-               ReferencedContainer = "container:TVMovieApp.xcodeproj">
+               BuildableName = "Showtime.app"
+               BlueprintName = "Showtime"
+               ReferencedContainer = "container:Showtime.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A36F4DB91CE5834C00DDFC85"
-               BuildableName = "TVMovieAppTests.xctest"
-               BlueprintName = "TVMovieAppTests"
-               ReferencedContainer = "container:TVMovieApp.xcodeproj">
+               BuildableName = "ShowtimeTests.xctest"
+               BlueprintName = "ShowtimeTests"
+               ReferencedContainer = "container:Showtime.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "A36F4DC41CE5834C00DDFC85"
-               BuildableName = "TVMovieAppUITests.xctest"
-               BlueprintName = "TVMovieAppUITests"
-               ReferencedContainer = "container:TVMovieApp.xcodeproj">
+               BuildableName = "ShowtimeTests.xctest"
+               BlueprintName = "ShowtimeUITests"
+               ReferencedContainer = "container:Showtime.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -53,9 +53,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A36F4DA01CE5834C00DDFC85"
-            BuildableName = "TVMovieApp.app"
-            BlueprintName = "TVMovieApp"
-            ReferencedContainer = "container:TVMovieApp.xcodeproj">
+            BuildableName = "Showtime.app"
+            BlueprintName = "Showtime"
+            ReferencedContainer = "container:Showtime.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -76,9 +76,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A36F4DA01CE5834C00DDFC85"
-            BuildableName = "TVMovieApp.app"
-            BlueprintName = "TVMovieApp"
-            ReferencedContainer = "container:TVMovieApp.xcodeproj">
+            BuildableName = "Showtime.app"
+            BlueprintName = "Showtime"
+            ReferencedContainer = "container:Showtime.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -95,9 +95,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "A36F4DA01CE5834C00DDFC85"
-            BuildableName = "TVMovieApp.app"
-            BlueprintName = "TVMovieApp"
-            ReferencedContainer = "container:TVMovieApp.xcodeproj">
+            BuildableName = "Showtime.app"
+            BlueprintName = "Showtime"
+            ReferencedContainer = "container:Showtime.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
