@@ -21,6 +21,8 @@ enum TVDBRequest: URLRequestConvertible {
     
     static let  baseURL = NSURL(string: "https://api.thetvdb.com/")!
     
+    static let bannerURL = "http://thetvdb.com/banners"
+    
     static let APIKey = "39B1C9521E930A9C"
     
     var method: Alamofire.Method {

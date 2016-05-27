@@ -84,6 +84,10 @@ class DetailViewController: UITableViewController {
        
     }
     
+    override func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool {
+        return false
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.

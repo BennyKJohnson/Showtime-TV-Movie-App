@@ -195,7 +195,7 @@ final class TVMClient {
                     show.identifier = data["seriesId"] as! String
                     show.releaseDate = NSDate()
                     show.rating = data["siteRating"] as! NSNumber
-                    show.posterURL = data["banner"] as! String
+                    show.posterURL = TVDBRequest.bannerURL + (data["banner"] as! String)
                     show.overview = data["overview"] as! String
                     show.genre = (data["genre"] as! [String]).first!
                     /*

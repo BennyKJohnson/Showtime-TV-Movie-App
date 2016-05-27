@@ -51,7 +51,27 @@ class SearchViewController: UITableViewController {
         configureCell(cell, withObject: searchResult)
         
         // Show Banner Image
-        cell.imageView?.image = nil 
+        cell.imageView?.image = nil
+        
+        let imageFetchTask = NSURLSession.sharedSession().downloadTaskWithURL(NSURL(string: searchResult.posterURL)!) { (fileURL, response, error) in
+            if let fileURL = fileURL {
+                
+                // Do on main thread
+                
+                dispatch_async(dispatch_get_main_queue(),{
+                    
+                   // let image = UIImage(data: NSData(contentsOfURL: fileURL)!)!
+                   // cell.imageView?.image = image
+                    
+                })
+                
+                
+            } else if let error = error {
+                print(error.localizedDescription)
+            }
+        }
+        
+        imageFetchTask.resume()
 
         return cell
     }

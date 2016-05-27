@@ -44,10 +44,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         definesPresentationContext = true
         
         tableView.tableHeaderView = searchController.searchBar
-        
-        
-     
-        
+    
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -259,30 +256,12 @@ extension MasterViewController: SearchResultsViewControllerDelegate {
             }
             
             self.managedObjectContext?.insertObject(film)
-            /*
-            if let tvShow = film as? Show {
-                self.managedObjectContext?.insertObject(tvShow)
-                
-                
-            } else if let movie = film as? Movie {
-                self.managedObjectContext?.insertObject(movie)
-            }
-            */
-            
             do {
                 try self.managedObjectContext?.save()
             } catch {
                 print("Save Error \(error)")
             }
-            
-            
-            
-            
         }
-        
-        
-        
-        
     }
     
     
