@@ -7,10 +7,13 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A3666CC21CF7DC170097389F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3666CC11CF7DC170097389F /* SearchViewController.swift */; };
+		A3666CC41CF7DD770097389F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3666CC31CF7DD770097389F /* Extensions.swift */; };
+		A3666CC61CF7EB3C0097389F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3666CC51CF7EB3C0097389F /* DetailViewController.swift */; };
+		A3666CC81CF7ED030097389F /* DescriptionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3666CC71CF7ED030097389F /* DescriptionTableViewCell.swift */; };
 		A36F4DA51CE5834C00DDFC85 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36F4DA41CE5834C00DDFC85 /* AppDelegate.swift */; };
 		A36F4DA81CE5834C00DDFC85 /* TVMovieApp.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = A36F4DA61CE5834C00DDFC85 /* TVMovieApp.xcdatamodeld */; };
 		A36F4DAA1CE5834C00DDFC85 /* MasterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36F4DA91CE5834C00DDFC85 /* MasterViewController.swift */; };
-		A36F4DAC1CE5834C00DDFC85 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36F4DAB1CE5834C00DDFC85 /* DetailViewController.swift */; };
 		A36F4DAF1CE5834C00DDFC85 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A36F4DAD1CE5834C00DDFC85 /* Main.storyboard */; };
 		A36F4DB11CE5834C00DDFC85 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A36F4DB01CE5834C00DDFC85 /* Assets.xcassets */; };
 		A36F4DB41CE5834C00DDFC85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A36F4DB21CE5834C00DDFC85 /* LaunchScreen.storyboard */; };
@@ -48,11 +51,14 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A3666CC11CF7DC170097389F /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
+		A3666CC31CF7DD770097389F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		A3666CC51CF7EB3C0097389F /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		A3666CC71CF7ED030097389F /* DescriptionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DescriptionTableViewCell.swift; sourceTree = "<group>"; };
 		A36F4DA11CE5834C00DDFC85 /* TVMovieApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TVMovieApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A36F4DA41CE5834C00DDFC85 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		A36F4DA71CE5834C00DDFC85 /* TVMovieApp.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TVMovieApp.xcdatamodel; sourceTree = "<group>"; };
 		A36F4DA91CE5834C00DDFC85 /* MasterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MasterViewController.swift; sourceTree = "<group>"; };
-		A36F4DAB1CE5834C00DDFC85 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		A36F4DAE1CE5834C00DDFC85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A36F4DB01CE5834C00DDFC85 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A36F4DB31CE5834C00DDFC85 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -131,13 +137,16 @@
 				A36F4DD71CE5863B00DDFC85 /* Models */,
 				A36F4DA41CE5834C00DDFC85 /* AppDelegate.swift */,
 				A36F4DA91CE5834C00DDFC85 /* MasterViewController.swift */,
-				A36F4DAB1CE5834C00DDFC85 /* DetailViewController.swift */,
 				A36F4DAD1CE5834C00DDFC85 /* Main.storyboard */,
 				A36F4DB01CE5834C00DDFC85 /* Assets.xcassets */,
 				A36F4DB21CE5834C00DDFC85 /* LaunchScreen.storyboard */,
 				A36F4DB51CE5834C00DDFC85 /* Info.plist */,
 				A36F4DA61CE5834C00DDFC85 /* TVMovieApp.xcdatamodeld */,
 				A3EB3B9D1CEECDFD004C9D12 /* TVMClient.swift */,
+				A3666CC11CF7DC170097389F /* SearchViewController.swift */,
+				A3666CC31CF7DD770097389F /* Extensions.swift */,
+				A3666CC51CF7EB3C0097389F /* DetailViewController.swift */,
+				A3666CC71CF7ED030097389F /* DescriptionTableViewCell.swift */,
 			);
 			path = TVMovieApp;
 			sourceTree = "<group>";
@@ -334,6 +343,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A3EB3BA61CEEE09B004C9D12 /* Movie.swift in Sources */,
+				A3666CC61CF7EB3C0097389F /* DetailViewController.swift in Sources */,
 				A3EB3BAC1CEEEBA0004C9D12 /* TVDBRequest.swift in Sources */,
 				A3EB3BB21CEF17F2004C9D12 /* Episode+CoreDataProperties.swift in Sources */,
 				A36F4DA81CE5834C00DDFC85 /* TVMovieApp.xcdatamodeld in Sources */,
@@ -343,11 +353,13 @@
 				A3EB3BA71CEEE09B004C9D12 /* Show+CoreDataProperties.swift in Sources */,
 				A36F4DAA1CE5834C00DDFC85 /* MasterViewController.swift in Sources */,
 				A3EB3BAA1CEEE09B004C9D12 /* Film.swift in Sources */,
+				A3666CC21CF7DC170097389F /* SearchViewController.swift in Sources */,
 				A3EB3BA81CEEE09B004C9D12 /* Show.swift in Sources */,
 				A3EB3BA91CEEE09B004C9D12 /* Film+CoreDataProperties.swift in Sources */,
 				A3EB3BA51CEEE09B004C9D12 /* Movie+CoreDataProperties.swift in Sources */,
+				A3666CC41CF7DD770097389F /* Extensions.swift in Sources */,
+				A3666CC81CF7ED030097389F /* DescriptionTableViewCell.swift in Sources */,
 				A3EB3BB31CEF17F2004C9D12 /* Episode.swift in Sources */,
-				A36F4DAC1CE5834C00DDFC85 /* DetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

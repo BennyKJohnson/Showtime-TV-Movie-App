@@ -8,6 +8,8 @@
 
 import Foundation
 import Alamofire
+import CoreData
+
 
 enum FilmType {
     case Movie
@@ -40,7 +42,15 @@ final class TVMClient {
     
     var tvdbAuthExpiryDate: NSDate?
     
+    let managedObjectContext: NSManagedObjectContext
+    
     let moviedbAuthKey: String = "50aeadc8dc1f5c15525c77b278dacd73"
+    
+    init(context: NSManagedObjectContext) {
+        
+        self.managedObjectContext = context
+        
+    }
     
     func getTVDBAuthKey(completition: (authKey: String?, error: TVMClientError?) -> ()) {
      
@@ -67,7 +77,7 @@ final class TVMClient {
     }
     
     
-    func query(query: String, completition: (results:[SearchResult], error: TVMClientError?) -> ()) {
+    func query(query: String, completition: (results:[SearchResult]?, error: TVMClientError?) -> ()) {
         
         guard let authKey = tvdbAuthKey else {
             getTVDBAuthKey({ (authKey, error) in
@@ -100,22 +110,27 @@ final class TVMClient {
                     print(error)
                 }
                 
-                let dataArray = dictionary["data"] as! [[String: AnyObject]]
+                if let dataArray = dictionary["data"] as? [[String: AnyObject]] {
+                    let searchResults = dataArray.map({ (dictionary) -> SearchResult in
+                        
+                        let name = dictionary["seriesName"] as! String
+                        
+                        let posterURL = TVDBRequest.baseURL.absoluteString + (dictionary["banner"] as! String)
+                        
+                        let id = "\(dictionary["id"] as! Int)"
+                        
+                        
+                        return SearchResult(name: name, posterURL: posterURL, identifier: id, type: .Show)
+                        
+                    })
+                    
+                    completition(results: searchResults, error: nil)
+                }
+                else {
+                    completition(results: [], error: nil)
+                }
                 
-                let searchResults = dataArray.map({ (dictionary) -> SearchResult in
-                    
-                    let name = dictionary["seriesName"] as! String
-                    
-                    let posterURL = dictionary["banner"] as! String
-                    
-                    let id = "\(dictionary["id"] as! Int)"
-                
-                    
-                    return SearchResult(name: name, posterURL: posterURL, identifier: id, type: .Show)
-                    
-                })
-                
-                completition(results: searchResults, error: nil)
+              
                 
             case .Failure(let error):
                 print(error)
@@ -160,7 +175,46 @@ final class TVMClient {
             // Send Request to ShowDB
             Alamofire.request(TVDBRequest.GetSeries(identifier: searchResult.identifier, authKey: authKey)).responseJSON(completionHandler: { (response) in
                 
-                completition(film: nil, error: nil)
+                guard let dictionary = response.result.value as? [String: AnyObject] else {
+                    completition(film: nil, error: nil)
+                    return
+                }
+                
+                
+                if let error = dictionary["Error"] as? String {
+                    completition(film: nil, error: TVMClientError.ServerError)
+                    print(error)
+                }
+                if let data = dictionary["data"] as? [String: AnyObject] {
+                   
+                    // Create TV Show
+                    let filmEntity = NSEntityDescription.entityForName("Film", inManagedObjectContext: self.managedObjectContext)!
+                    
+                    let show = Film(entity: filmEntity, insertIntoManagedObjectContext: nil)
+                    show.name = data["seriesName"] as! String
+                    show.identifier = data["seriesId"] as! String
+                    show.releaseDate = NSDate()
+                    show.rating = data["siteRating"] as! NSNumber
+                    show.posterURL = data["banner"] as! String
+                    show.overview = data["overview"] as! String
+                    show.genre = (data["genre"] as! [String]).first
+                    /*
+ film.name = "My Film"
+ film.genre = ""
+ film.overview = ""
+ film.identifier = "id"
+ film.rating = NSNumber(double: 7.0)
+ film.releaseDate = NSDate()
+ film.posterURL = ""
+
+ */
+                    
+                    completition(film: show, error: nil)
+                    return
+                } else {
+                    completition(film: nil, error: nil)
+
+                }
 
             })
         }

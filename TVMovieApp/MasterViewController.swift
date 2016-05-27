@@ -15,9 +15,14 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     var detailViewController: DetailViewController? = nil
     var managedObjectContext: NSManagedObjectContext? = nil
 
+    var searchController:UISearchController!// = UISearchController(searchResultsController: nil)!
+    
+    var client: TVMClient!
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        client = TVMClient(context: managedObjectContext!)
         // Do any additional setup after loading the view, typically from a nib.
         self.navigationItem.leftBarButtonItem = self.editButtonItem()
 
@@ -27,6 +32,19 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             let controllers = split.viewControllers
             self.detailViewController = (controllers[controllers.count-1] as! UINavigationController).topViewController as? DetailViewController
         }
+        
+        // Setup SearchController
+        
+        // Create SearchViewController
+        let searchViewController = storyboard!.instantiateViewControllerWithIdentifier("SearchViewController") as! SearchViewController
+        searchViewController.delegate = self
+        searchController = UISearchController(searchResultsController: searchViewController)
+        searchController.searchResultsUpdater = self
+        searchController.dimsBackgroundDuringPresentation = false
+        definesPresentationContext = true
+        
+        tableView.tableHeaderView = searchController.searchBar
+        
         
      
         
@@ -43,6 +61,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     }
 
     func insertNewObject(sender: AnyObject) {
+        
         let context = self.fetchedResultsController.managedObjectContext
         let entity = self.fetchedResultsController.fetchRequest.entity!
         
@@ -207,3 +226,64 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
 
 }
 
+extension MasterViewController: UISearchResultsUpdating {
+    
+    func updateSearchResultsForSearchController(searchController: UISearchController) {
+        
+        if let searchText = searchController.searchBar.text where searchText.length > 2 {
+            // Send Request 
+            client.query(searchText, completition: { (results, error) in
+                
+                // Set the ViewController Display to SearchController
+                if let results = results {
+                    let searchViewController = searchController.searchResultsController as! SearchViewController
+                    searchViewController.searchResults = results
+                    searchViewController.tableView.reloadData()
+                }
+            })
+        }
+    }
+}
+
+extension MasterViewController: SearchResultsViewControllerDelegate {
+    
+    func didSelectSearchResult(searchResult: SearchResult) {
+        
+        // Hide SearchController
+        searchController.dismissViewControllerAnimated(true, completion: nil)
+        
+        // Get SearchResult Detail
+        client.getFilmDetail(searchResult) { (film, error) in
+            guard let film = film else {
+                return
+            }
+            
+            self.managedObjectContext?.insertObject(film)
+            /*
+            if let tvShow = film as? Show {
+                self.managedObjectContext?.insertObject(tvShow)
+                
+                
+            } else if let movie = film as? Movie {
+                self.managedObjectContext?.insertObject(movie)
+            }
+            */
+            
+            do {
+                try self.managedObjectContext?.save()
+            } catch {
+                print("Save Error \(error)")
+            }
+            
+            
+            
+            
+        }
+        
+        
+        
+        
+    }
+    
+    
+}

@@ -1,5 +1,5 @@
 //
-//  DetailViewController.swift
+//  SearchViewController.swift
 //  TVMovieApp
 //
 //  Created by Ben Johnson on 27/05/2016.
@@ -8,40 +8,19 @@
 
 import UIKit
 
-enum DetailCellType {
-    case DescriptionCell(title: String, body: String)
-    
-    
+protocol SearchResultsViewControllerDelegate {
+    func didSelectSearchResult(searchResult: SearchResult)
 }
 
-class DetailViewController: UITableViewController {
+class SearchViewController: UITableViewController {
+    
+    var searchResults: [SearchResult] = []
+    
+    var delegate: SearchResultsViewControllerDelegate?
 
-    var cells: [DetailCellType] = []
-    
-    var film: Film? {
-        didSet {
-            // Update the view.
-            self.configureView()
-        }
-    }
-    
-    func configureView() {
-        // Update the user interface for the detail item.
-        if let film = self.film{
-            title = film.name
-            
-            cells = []
-            cells.append(DetailCellType.DescriptionCell(title: "Description", body: film.overview!))
-            
-        }
-    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        tableView.estimatedRowHeight = 44.0
-        tableView.rowHeight = UITableViewAutomaticDimension
-        
-     
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -57,33 +36,45 @@ class DetailViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
-        return cells.count
+        return searchResults.count
     }
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cellType = cells[indexPath.row]
-        switch cellType {
-        case .DescriptionCell(let title, let body):
-            
-            let cell = tableView.dequeueReusableCellWithIdentifier("DescriptionCell", forIndexPath: indexPath) as! DescriptionTableViewCell
-            cell.titleTextLabel.text = title
-            cell.descriptionTextLabel.text = body
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+
+        let searchResult = searchResults[indexPath.row]
+        configureCell(cell, withObject: searchResult)
         
-            return cell
-            
-        }
-        
-        
-       
+        // Show Banner Image
+        cell.imageView?.image = nil 
+
+        return cell
     }
     
+    func configureCell(cell: UITableViewCell, withObject object: SearchResult) {
+        cell.textLabel!.text = object.name
+        
+        
+        
+        
+        
+        
+        
+        
+        
+    }
+    
+    override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        
+        let searchResult = searchResults[indexPath.row]
+        delegate?.didSelectSearchResult(searchResult)
+        
+    }
 
     /*
     // Override to support conditional editing of the table view.
