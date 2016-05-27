@@ -11,29 +11,6 @@ import Alamofire
 import CoreData
 
 
-enum FilmType {
-    case Movie
-    case Show
-}
-
-struct SearchResult {
-    
-    let name: String
-    
-    let posterURL: String
-    
-    let identifier: String
-    
-    let type: FilmType
-    
-}
-
-enum TVMClientError: ErrorType {
-    case Response(error:NSError)
-    case InvalidData
-    case ServerError
-    
-}
 
 
 final class TVMClient {
@@ -198,17 +175,7 @@ final class TVMClient {
                     show.posterURL = TVDBRequest.bannerURL + (data["banner"] as! String)
                     show.overview = data["overview"] as! String
                     show.genre = (data["genre"] as! [String]).first!
-                    /*
- film.name = "My Film"
- film.genre = ""
- film.overview = ""
- film.identifier = "id"
- film.rating = NSNumber(double: 7.0)
- film.releaseDate = NSDate()
- film.posterURL = ""
-
- */
-                    
+                                      
                     completition(film: show, error: nil)
                     return
                 } else {

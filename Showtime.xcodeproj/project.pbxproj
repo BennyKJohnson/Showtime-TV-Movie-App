@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A35CF8301CF810FA005873BA /* ShowtimeDataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35CF82F1CF810FA005873BA /* ShowtimeDataTypes.swift */; };
 		A3666CC21CF7DC170097389F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3666CC11CF7DC170097389F /* SearchViewController.swift */; };
 		A3666CC41CF7DD770097389F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3666CC31CF7DD770097389F /* Extensions.swift */; };
 		A3666CC61CF7EB3C0097389F /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3666CC51CF7EB3C0097389F /* DetailViewController.swift */; };
@@ -51,6 +52,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		A35CF82F1CF810FA005873BA /* ShowtimeDataTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowtimeDataTypes.swift; sourceTree = "<group>"; };
 		A3666CC11CF7DC170097389F /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		A3666CC31CF7DD770097389F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		A3666CC51CF7EB3C0097389F /* DetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
@@ -180,6 +182,7 @@
 				A3EB3BA21CEEE09B004C9D12 /* Show.swift */,
 				A3EB3BA31CEEE09B004C9D12 /* Film+CoreDataProperties.swift */,
 				A3EB3BA41CEEE09B004C9D12 /* Film.swift */,
+				A35CF82F1CF810FA005873BA /* ShowtimeDataTypes.swift */,
 			);
 			name = Models;
 			sourceTree = "<group>";
@@ -355,6 +358,7 @@
 				A3EB3BAA1CEEE09B004C9D12 /* Film.swift in Sources */,
 				A3666CC21CF7DC170097389F /* SearchViewController.swift in Sources */,
 				A3EB3BA81CEEE09B004C9D12 /* Show.swift in Sources */,
+				A35CF8301CF810FA005873BA /* ShowtimeDataTypes.swift in Sources */,
 				A3EB3BA91CEEE09B004C9D12 /* Film+CoreDataProperties.swift in Sources */,
 				A3EB3BA51CEEE09B004C9D12 /* Movie+CoreDataProperties.swift in Sources */,
 				A3666CC41CF7DD770097389F /* Extensions.swift in Sources */,

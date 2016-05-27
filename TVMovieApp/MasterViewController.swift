@@ -62,7 +62,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         let context = self.fetchedResultsController.managedObjectContext
         let entity = self.fetchedResultsController.fetchRequest.entity!
         
-        let film = Film(entity: entity, insertIntoManagedObjectContext: context)
+        let film = Show(entity: NSEntityDescription.entityForName("Show", inManagedObjectContext: managedObjectContext!)!, insertIntoManagedObjectContext: context)
         
         film.name = "My Film"
         film.genre = ""
@@ -71,7 +71,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         film.rating = NSNumber(double: 7.0)
         film.releaseDate = NSDate()
         film.posterURL = ""
-        
+      
         // Save the context.
         do {
             try context.save()

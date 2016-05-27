@@ -10,7 +10,7 @@ import Foundation
 import CoreData
 
 
-class Movie: NSManagedObject {
+class Movie: Film {
 
 // Insert code here to add functionality to your managed object subclass
 

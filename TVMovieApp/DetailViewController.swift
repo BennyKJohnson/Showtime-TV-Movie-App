@@ -32,7 +32,16 @@ class DetailViewController: UITableViewController {
             
             cells = []
             cells.append(DetailCellType.DescriptionCell(title: "Description", body: film.overview))
-            
+            if let show = film as? Show {
+                
+                // Setup Cells specific to TV Show
+                print("Showing Detail for TV Show: " + show.name)
+                
+            } else if let movie = film as? Movie {
+                
+                // Setup Cells specific to Movie
+                print("Showing Detail for Movie: " + movie.name)
+            }
         }
     }
     override func viewDidLoad() {
