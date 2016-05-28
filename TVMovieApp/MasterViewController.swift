@@ -44,6 +44,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         definesPresentationContext = true
         
         tableView.tableHeaderView = searchController.searchBar
+        
+        tableView.estimatedRowHeight = 44.0
+        tableView.rowHeight = UITableViewAutomaticDimension
     
     }
 
@@ -110,8 +113,9 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
-        let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as! NSManagedObject
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! FilmCell
+        
+        let object = self.fetchedResultsController.objectAtIndexPath(indexPath) as! Film
         self.configureCell(cell, withObject: object)
         return cell
     }
@@ -137,8 +141,10 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         }
     }
 
-    func configureCell(cell: UITableViewCell, withObject object: NSManagedObject) {
-        cell.textLabel!.text = object.valueForKey("name")!.description
+    func configureCell(cell: FilmCell, withObject object: Film) {
+        cell.titleTextLabel.text = object.name
+        cell.posterImageView.af_setImageWithURL(NSURL(string: object.posterURL)!)
+
     }
 
     // MARK: - Fetched results controller
@@ -202,7 +208,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
             case .Delete:
                 tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Fade)
             case .Update:
-                self.configureCell(tableView.cellForRowAtIndexPath(indexPath!)!, withObject: anObject as! NSManagedObject)
+                self.configureCell(tableView.cellForRowAtIndexPath(indexPath!)! as! FilmCell, withObject: anObject as! Film)
             case .Move:
                 tableView.moveRowAtIndexPath(indexPath!, toIndexPath: newIndexPath!)
         }
@@ -244,6 +250,7 @@ extension MasterViewController: UISearchResultsUpdating {
 
 extension MasterViewController: SearchResultsViewControllerDelegate {
     
+    
     func didSelectSearchResult(searchResult: SearchResult) {
         
         // Hide SearchController
@@ -251,12 +258,16 @@ extension MasterViewController: SearchResultsViewControllerDelegate {
         
         // Get SearchResult Detail
         client.getFilmDetail(searchResult) { (film, error) in
-            if  let film = film  {
+            if  let film = film   {
+                
+                
                 self.managedObjectContext?.insertObject(film)
                 do {
                     try self.managedObjectContext?.save()
                 } catch {
                     print("Save Error \(error)")
+                    self.managedObjectContext?.deleteObject(film)
+                    
                 }
             } else if let error = error {
                 

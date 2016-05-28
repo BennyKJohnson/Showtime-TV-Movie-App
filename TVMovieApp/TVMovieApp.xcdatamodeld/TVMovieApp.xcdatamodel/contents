@@ -16,7 +16,7 @@
     </entity>
     <entity name="Film" representedClassName=".Film" syncable="YES">
         <attribute name="genre" attributeType="String" syncable="YES"/>
-        <attribute name="identifier" attributeType="String" syncable="YES"/>
+        <attribute name="identifier" attributeType="String" indexed="YES" syncable="YES"/>
         <attribute name="name" attributeType="String" syncable="YES"/>
         <attribute name="overview" attributeType="String" syncable="YES"/>
         <attribute name="posterURL" attributeType="String" syncable="YES"/>
@@ -24,6 +24,11 @@
         <attribute name="releaseDate" attributeType="Date" syncable="YES"/>
         <attribute name="runtime" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <attribute name="status" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="identifier"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
     </entity>
     <entity name="Movie" representedClassName=".Movie" parentEntity="Film" syncable="YES"/>
     <entity name="Show" representedClassName=".Show" parentEntity="Film" syncable="YES">
@@ -35,8 +40,8 @@
     <elements>
         <element name="Episode" positionX="288" positionY="216" width="128" height="135"/>
         <element name="Event" positionX="261" positionY="189" width="128" height="60"/>
+        <element name="Film" positionX="279" positionY="279" width="128" height="180"/>
         <element name="Movie" positionX="261" positionY="198" width="128" height="45"/>
         <element name="Show" positionX="270" positionY="207" width="128" height="105"/>
-        <element name="Film" positionX="279" positionY="279" width="128" height="180"/>
     </elements>
 </model>
