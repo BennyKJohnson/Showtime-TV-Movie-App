@@ -8,9 +8,9 @@
 
 import Foundation
 
-enum FilmType {
-    case Movie
-    case Show
+enum FilmType: String {
+    case Movie = "movie"
+    case Show = "tv"
 }
 
 struct SearchResult {

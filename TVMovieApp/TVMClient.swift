@@ -23,9 +23,15 @@ final class ShowtimeClient {
     
     let moviedbAuthKey: String = "50aeadc8dc1f5c15525c77b278dacd73"
     
+    let RFC3339DateFormatter: NSDateFormatter = NSDateFormatter()
+    
     init(context: NSManagedObjectContext) {
         
         self.managedObjectContext = context
+        
+        // Setup dateFormatter
+        RFC3339DateFormatter.dateFormat = "yyyy-MM-dd"
+        
         
     }
     
@@ -50,6 +56,79 @@ final class ShowtimeClient {
                 completition(authKey: nil, error: TVMClientError.Response(error: error))
             }
             
+        }
+    }
+    
+    
+    struct MovieDBPropertyKey {
+        static let searchResultsKey = "results"
+        static let titleKey = "title"
+        static let nameKey = "name"
+        static let identifierKey = "id"
+        static let posterURLKey = "poster_path"
+        static let overviewKey = "overview"
+        static let ratingKey = "vote_average"
+        static let releaseDateKey = "release_date"
+        static let firstAirDateKey = "first_air_date"
+    }
+    
+    func queryMovie(query: String, completition: (results:[SearchResult]?, error: TVMClientError?) -> ()) {
+        
+        Alamofire.request(MovieDBRequest.Search(query: query)).responseJSON { (response) in
+        
+            switch response.result {
+            case .Success:
+            
+                guard let dictionary = response.result.value as? [String: AnyObject] else {
+                    completition(results: [], error: TVMClientError.InvalidData)
+                    return
+                }
+                
+                if let results = dictionary[MovieDBPropertyKey.searchResultsKey] as? [[String: AnyObject]] {
+                    
+                    let filmResults = results.filter({ (dictionary) -> Bool in
+                        let mediaType = dictionary["media_type"] as! String
+                        
+                        switch mediaType {
+                        case "movie", "tv":
+                            return true
+                        default:
+                            return false
+                        }
+                        
+                    })
+                    
+                    let searchResults = filmResults.map({ (dictionary) -> SearchResult in
+                        
+                        let filmType = FilmType(rawValue: dictionary["media_type"] as! String)!
+                        let name: String
+                        switch filmType {
+                            case .Movie:
+                                name = dictionary[MovieDBPropertyKey.titleKey] as! String
+                            case .Show:
+                                name = dictionary[MovieDBPropertyKey.nameKey] as! String
+                        }
+                        
+                        let posterURL = MovieDBRequest.imageBaseURL + ((dictionary[MovieDBPropertyKey.posterURLKey] as? String) ?? "")
+                        
+                        let id = "\(dictionary[MovieDBPropertyKey.identifierKey] as! Int)"
+                        
+                        
+                        return SearchResult(name: name, posterURL: posterURL, identifier: id, type: filmType)
+                        
+                    })
+                    
+                    completition(results: searchResults, error: nil)
+                    
+                } else {
+                    completition(results: nil, error: TVMClientError.InvalidData)
+                }
+                
+            case .Failure(let error):
+                print(error)
+                completition(results: nil, error: TVMClientError.Response(error: error))
+                return
+            }
         }
     }
     
@@ -122,13 +201,64 @@ final class ShowtimeClient {
     func getFilmDetail(searchResult: SearchResult, completition: (film: Film?, error: TVMClientError?) -> ()) {
         
         switch searchResult.type {
-        case .Movie:
+        case .Movie, .Show:
             // Send Request to MovieDB
-            Alamofire.request(MovieDBRequest.GetMovie(identifier: searchResult.identifier)).responseJSON(completionHandler: { (response) in
+            Alamofire.request(MovieDBRequest.GetMovie(identifier: searchResult.identifier, type: searchResult.type)).responseJSON(completionHandler: { (response) in
+                
+                guard let dictionary = response.result.value as? [String: AnyObject] else {
+                    completition(film: nil, error: TVMClientError.InvalidData)
+                    return
+                }
+                
+                // Parse Dictionary
+                let name: String
+                let releaseDate:String
+
+                switch searchResult.type {
+                case .Movie:
+                    name = dictionary[MovieDBPropertyKey.titleKey] as! String
+                    releaseDate = dictionary[MovieDBPropertyKey.releaseDateKey] as! String
+                case .Show:
+                    name = dictionary[MovieDBPropertyKey.nameKey] as! String
+                    releaseDate = dictionary[MovieDBPropertyKey.firstAirDateKey] as! String
+                }
+                
+                let posterURL = MovieDBRequest.imageBaseURL + ((dictionary[MovieDBPropertyKey.posterURLKey] as? String) ?? "")
+                
+                let id = "\(dictionary[MovieDBPropertyKey.identifierKey] as! Int)"
+                
+                let genres = (dictionary["genres"] as! [[String: AnyObject]]).map({ (genre) -> String in
+                    return genre["name"] as! String
+                })
                 
                 
                 
-                completition(film: nil, error: nil)
+                
+                // Create Film
+                let film: Film
+                
+                switch searchResult.type {
+                case .Movie:
+                    let movieEntity = NSEntityDescription.entityForName("Movie", inManagedObjectContext: self.managedObjectContext)!
+                    
+                    let movie = Movie(entity: movieEntity, insertIntoManagedObjectContext: nil)
+                    film = movie
+                    
+                case .Show:
+                    let showEntity = NSEntityDescription.entityForName("Show", inManagedObjectContext: self.managedObjectContext)!
+                    let show = Show(entity: showEntity, insertIntoManagedObjectContext: nil)
+                    film = show
+                }
+                
+                film.identifier = id
+                film.posterURL = MovieDBRequest.imageBaseURL + posterURL
+                film.name = name
+                film.overview = dictionary[MovieDBPropertyKey.overviewKey] as! String
+                film.rating = dictionary[MovieDBPropertyKey.ratingKey] as! NSNumber
+                film.genre = genres.first ?? "Unknown"
+                film.releaseDate = self.RFC3339DateFormatter.dateFromString(releaseDate)!
+                
+                completition(film: film, error: nil)
             })
             
             
@@ -178,8 +308,8 @@ final class ShowtimeClient {
                     show.network = data["network"] as! String
                     show.airsDayOfWeek = data["airsDayOfWeek"] as! String
                     show.airsTime = data["airsTime"] as! String
-                    show.runtime = data["runtime"] as! NSNumber
-                    
+                    show.runtime = NSNumber(integer: Int(data["runtime"] as! String)!)
+
                     
                     completition(film: show, error: nil)
                     return

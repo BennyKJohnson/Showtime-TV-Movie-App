@@ -229,7 +229,7 @@ extension MasterViewController: UISearchResultsUpdating {
         
         if let searchText = searchController.searchBar.text where searchText.length > 2 {
             // Send Request 
-            client.query(searchText, completition: { (results, error) in
+            client.queryMovie(searchText, completition: { (results, error) in
                 
                 // Set the ViewController Display to SearchController
                 if let results = results {

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AlamofireImage
 
 protocol SearchResultsViewControllerDelegate {
     func didSelectSearchResult(searchResult: SearchResult)
@@ -45,48 +46,21 @@ class SearchViewController: UITableViewController {
 
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath)
+        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! FilmCell
 
         let searchResult = searchResults[indexPath.row]
         configureCell(cell, withObject: searchResult)
         
-        // Show Banner Image
-        cell.imageView?.image = nil
         
-        let imageFetchTask = NSURLSession.sharedSession().downloadTaskWithURL(NSURL(string: searchResult.posterURL)!) { (fileURL, response, error) in
-            if let fileURL = fileURL {
-                
-                // Do on main thread
-                
-                dispatch_async(dispatch_get_main_queue(),{
-                    
-                   // let image = UIImage(data: NSData(contentsOfURL: fileURL)!)!
-                   // cell.imageView?.image = image
-                    
-                })
-                
-                
-            } else if let error = error {
-                print(error.localizedDescription)
-            }
-        }
-        
-        imageFetchTask.resume()
-
+   
         return cell
     }
     
-    func configureCell(cell: UITableViewCell, withObject object: SearchResult) {
-        cell.textLabel!.text = object.name
-        
-        
-        
-        
-        
-        
-        
-        
-        
+    func configureCell(cell: FilmCell, withObject object: SearchResult) {
+        cell.titleTextLabel!.text = object.name
+        // Show Banner Image
+        cell.imageView?.af_setImageWithURL(NSURL(string: object.posterURL)!)
+   
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
