@@ -14,4 +14,13 @@ class Film: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass
     
+    var sectionTitle: String {
+        if let movie = self as? Movie {
+            return "Movies"
+        } else {
+            return "TV Shows"
+        }
+        
+    }
+    
 }

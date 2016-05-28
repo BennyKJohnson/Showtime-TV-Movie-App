@@ -258,6 +258,8 @@ final class ShowtimeClient {
                 film.genre = genres.first ?? "Unknown"
                 film.releaseDate = self.RFC3339DateFormatter.dateFromString(releaseDate)!
                 
+                
+                
                 completition(film: film, error: nil)
             })
             

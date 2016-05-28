@@ -141,6 +141,12 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         }
     }
 
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        let sectionInfo = self.fetchedResultsController.sections![section]
+        return sectionInfo.name
+
+    }
+    
     func configureCell(cell: FilmCell, withObject object: Film) {
         cell.titleTextLabel.text = object.name
         cell.posterImageView.af_setImageWithURL(NSURL(string: object.posterURL)!)
@@ -169,7 +175,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         
         // Edit the section name key path and cache name if appropriate.
         // nil for section name key path means "no sections".
-        let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext!, sectionNameKeyPath: nil, cacheName: "Master")
+        let aFetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: self.managedObjectContext!, sectionNameKeyPath: "sectionTitle", cacheName: "Master")
         aFetchedResultsController.delegate = self
         _fetchedResultsController = aFetchedResultsController
         
