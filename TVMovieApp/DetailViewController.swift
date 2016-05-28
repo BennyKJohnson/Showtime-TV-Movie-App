@@ -97,6 +97,18 @@ class DetailViewController: UITableViewController {
         return false
     }
     
+    @IBAction func showActivityViewController(sender: AnyObject) {
+        
+        let shareContent = film!.name
+        
+        let activityViewController = UIActivityViewController(activityItems: [shareContent], applicationActivities: nil)
+        presentViewController(activityViewController, animated: true) {
+            
+        }
+        
+        
+    }
+    
 
     /*
     // Override to support conditional editing of the table view.

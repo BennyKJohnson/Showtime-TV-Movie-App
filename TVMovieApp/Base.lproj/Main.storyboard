@@ -82,7 +82,13 @@
                             <outlet property="delegate" destination="6YM-rc-m1y" id="Sbo-t3-p8E"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="ZTV-9v-7fZ"/>
+                    <navigationItem key="navigationItem" id="ZTV-9v-7fZ">
+                        <barButtonItem key="rightBarButtonItem" systemItem="action" id="Hu3-5s-Zu7">
+                            <connections>
+                                <action selector="showActivityViewController:" destination="6YM-rc-m1y" id="qQh-1m-wpU"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dme-dI-wOS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
