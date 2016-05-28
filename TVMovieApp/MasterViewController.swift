@@ -251,16 +251,28 @@ extension MasterViewController: SearchResultsViewControllerDelegate {
         
         // Get SearchResult Detail
         client.getFilmDetail(searchResult) { (film, error) in
-            guard let film = film else {
-                return
+            if  let film = film  {
+                self.managedObjectContext?.insertObject(film)
+                do {
+                    try self.managedObjectContext?.save()
+                } catch {
+                    print("Save Error \(error)")
+                }
+            } else if let error = error {
+                
+                print(error)
+
+                // Create ErrorAlertController
+                let errorAlertController = UIAlertController(title: "Error", message: "Error getting details for \(searchResult.name)", preferredStyle: UIAlertControllerStyle.Alert)
+                let okAction = UIAlertAction(title: "OK", style: UIAlertActionStyle.Default, handler: nil)
+                errorAlertController.addAction(okAction)
+                
+                // Show Error
+                self.presentViewController(errorAlertController, animated: true, completion: nil)
+            
             }
             
-            self.managedObjectContext?.insertObject(film)
-            do {
-                try self.managedObjectContext?.save()
-            } catch {
-                print("Save Error \(error)")
-            }
+          
         }
     }
     
