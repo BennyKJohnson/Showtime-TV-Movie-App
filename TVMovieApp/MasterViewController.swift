@@ -18,7 +18,14 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     var searchController:UISearchController!// = UISearchController(searchResultsController: nil)!
     
     var client: ShowtimeClient!
-
+    
+    // TODO: May be desirable to move all notification data/functionality to its own file.
+    struct FilmNotification {
+        var film:    Film
+        var message: String
+        var action:  String
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -49,6 +56,12 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         tableView.estimatedRowHeight = 44.0
         tableView.rowHeight = UITableViewAutomaticDimension
     
+        // Setup notification system.
+        let notificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: nil)
+        UIApplication.sharedApplication().registerUserNotificationSettings(notificationSettings)
+        
+        // Schedule notifications.
+        scheduleNotifications()
     }
 
     override func viewWillAppear(animated: Bool) {
@@ -317,5 +330,47 @@ extension MasterViewController: SearchResultsViewControllerDelegate {
         }
     }
     
+    // Notification system functionality.
+    func scheduleNotifications() {
+        // Get movies/shows.
+        let films = self.fetchedResultsController.fetchedObjects as! [Film]
+        
+        for film in films {
+            let isMovie = ((film as? Movie) != nil)
+            let isShow  = ((film as? Show)  != nil)
+            
+            if isMovie {
+                let notification = FilmNotification(film: film, message: "is out now!", action: "movie")
+                scheduleFilmForNotification(self, notifyObject: notification)
+            } else if isShow {
+                // let notification = FilmNotification(film: film, message: "airs today!", action: "show")
+                // scheduleFilmForNotification(self, notifyObject: notification)
+            } else {
+                print("Error: film type not supported.")
+            }
+        }
+    }
     
+    func scheduleFilmForNotification(sender: AnyObject, notifyObject: FilmNotification) {
+        // Initialise notification.
+        let settings = UIApplication.sharedApplication().currentUserNotificationSettings()
+        
+        if settings!.types == .None {
+            let ac = UIAlertController(title: "Can't schedule", message: "Either we don't have permission to schedule notifications, or we haven't asked yet.", preferredStyle: .Alert)
+            ac.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+            presentViewController(ac, animated: true, completion: nil)
+            return
+        }
+        
+        let notification = UILocalNotification()
+        let film         = notifyObject.film
+
+        notification.fireDate    = film.releaseDate   // Used to test: NSDate(timeIntervalSinceNow: 5)
+        notification.alertBody   = "\(film.name) \(notifyObject.message)"
+        notification.alertAction = notifyObject.action
+        notification.soundName   = UILocalNotificationDefaultSoundName
+        
+        UIApplication.sharedApplication().scheduleLocalNotification(notification)
+    }
+
 }
