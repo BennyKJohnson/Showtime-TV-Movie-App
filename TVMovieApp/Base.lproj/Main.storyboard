@@ -71,7 +71,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" editable="NO" text="Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, " textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="Wyr-ed-jtV" customClass="TruncateTextView" customModule="Showtime" customModuleProvider="target">
-                                            <rect key="frame" x="8" y="31" width="584" height="21"/>
+                                            <rect key="frame" x="15" y="31" width="577" height="21"/>
                                             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
                                             <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -83,7 +83,7 @@
                                         <constraint firstItem="1Yg-lt-SFn" firstAttribute="top" secondItem="TMn-As-gdh" secondAttribute="topMargin" id="8C3-CM-qfR"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="Wyr-ed-jtV" secondAttribute="bottom" constant="8" id="8Uf-Sf-03E"/>
                                         <constraint firstItem="1Yg-lt-SFn" firstAttribute="trailing" secondItem="TMn-As-gdh" secondAttribute="trailingMargin" id="Gn8-QW-A1k"/>
-                                        <constraint firstItem="Wyr-ed-jtV" firstAttribute="leading" secondItem="1Yg-lt-SFn" secondAttribute="leading" constant="-7" id="OCu-0P-M3W"/>
+                                        <constraint firstItem="Wyr-ed-jtV" firstAttribute="leading" secondItem="1Yg-lt-SFn" secondAttribute="leading" id="OCu-0P-M3W"/>
                                         <constraint firstItem="Wyr-ed-jtV" firstAttribute="top" secondItem="1Yg-lt-SFn" secondAttribute="bottom" constant="-3" id="fVw-xY-2QH"/>
                                         <constraint firstItem="1Yg-lt-SFn" firstAttribute="leading" secondItem="TMn-As-gdh" secondAttribute="leadingMargin" constant="7" id="niM-Tn-MMH"/>
                                     </constraints>
@@ -146,7 +146,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="103"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Imformation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bB-Rd-FSM">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bB-Rd-FSM">
                                             <rect key="frame" x="15" y="8" width="584" height="26"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="26" id="jyH-ut-Rcf"/>

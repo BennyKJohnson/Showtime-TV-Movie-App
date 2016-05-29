@@ -75,6 +75,7 @@ final class ShowtimeClient {
         static let seasonNumberKey = "season_number"
         static let episodeCountKey = "episode_count"
         static let episodeNumberKey = "episode_number"
+        static let runtimeKey = "runtime"
     }
     
     func queryMovie(query: String, completition: (results:[SearchResult]?, error: TVMClientError?) -> ()) {
@@ -289,6 +290,7 @@ final class ShowtimeClient {
         film.rating = dictionary[MovieDBPropertyKey.ratingKey] as! NSNumber
         film.genre = genres.first ?? "Unknown"
         film.releaseDate = self.RFC3339DateFormatter.dateFromString(releaseDate)!
+        film.runtime = dictionary[MovieDBPropertyKey.runtimeKey] as! NSNumber
         
         return movie
     }

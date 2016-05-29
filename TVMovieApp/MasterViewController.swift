@@ -42,6 +42,7 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         searchController.searchResultsUpdater = self
         searchController.dimsBackgroundDuringPresentation = false
         definesPresentationContext = true
+        searchController.searchBar.placeholder = "Search TV Series or Movie"
         
         tableView.tableHeaderView = searchController.searchBar
         
@@ -283,6 +284,7 @@ extension MasterViewController: SearchResultsViewControllerDelegate {
         
         // Hide SearchController
         searchController.dismissViewControllerAnimated(true, completion: nil)
+        searchController.searchBar.text = nil
         
         // Get SearchResult Detail
         client.getFilmDetail(searchResult) { (film, error) in
