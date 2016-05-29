@@ -316,7 +316,6 @@ final class ShowtimeClient {
         // Parse Seasons
         let seasons = (dictionary["seasons"] as! [[String: AnyObject]]).map({ (seasonDictionary) -> Season in
             
-            let airDate = seasonDictionary[MovieDBPropertyKey.airDateKey] as! String
             let identifier = seasonDictionary[MovieDBPropertyKey.identifierKey] as! NSNumber
             let posterURL: String?
             if let relativePosterURL = seasonDictionary[MovieDBPropertyKey.posterURLKey] as? String {
@@ -328,7 +327,9 @@ final class ShowtimeClient {
             // Create Season
             let seasonEntity = NSEntityDescription.entityForName("Season", inManagedObjectContext: self.managedObjectContext)!
             let season = Season(entity: seasonEntity, insertIntoManagedObjectContext: managedObjectContext)
-            season.airDate = RFC3339DateFormatter.dateFromString(airDate)
+            if let airDate = seasonDictionary[MovieDBPropertyKey.airDateKey] as? String {
+                season.airDate = RFC3339DateFormatter.dateFromString(airDate)
+            }
             season.episodeCount = seasonDictionary[MovieDBPropertyKey.episodeCountKey] as! NSNumber
             season.number = seasonDictionary[MovieDBPropertyKey.seasonNumberKey] as! NSNumber
             season.identifier = "\(identifier)"
