@@ -383,7 +383,7 @@ extension MasterViewController: SearchResultsViewControllerDelegate {
         
         let notification = UILocalNotification()
 
-        notification.fireDate    = notifyObject.releaseDate // NSDate(timeIntervalSinceNow: 5)
+        notification.fireDate    = NSDate(timeIntervalSinceNow: 5)
         notification.alertBody   = "\(notifyObject.name) \(notifyObject.message)"
         notification.alertAction = notifyObject.action
         notification.soundName   = UILocalNotificationDefaultSoundName
