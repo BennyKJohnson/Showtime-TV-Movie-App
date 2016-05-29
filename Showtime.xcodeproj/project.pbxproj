@@ -13,7 +13,6 @@
 		6F49FD681CFA806800F88B34 /* Season+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F49FD661CFA806800F88B34 /* Season+CoreDataProperties.swift */; };
 		6F49FD691CFA806800F88B34 /* Season.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F49FD671CFA806800F88B34 /* Season.swift */; };
 		6F49FD6B1CFA97E400F88B34 /* TruncateTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F49FD6A1CFA97E400F88B34 /* TruncateTextView.swift */; };
-		6F6265921CF951C200E2C5D7 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F6265911CF951C200E2C5D7 /* AlamofireImage.framework */; };
 		6F6265941CF95E8700E2C5D7 /* FilmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6265931CF95E8700E2C5D7 /* FilmCell.swift */; };
 		A35CF8301CF810FA005873BA /* ShowtimeDataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35CF82F1CF810FA005873BA /* ShowtimeDataTypes.swift */; };
 		A3666CC21CF7DC170097389F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3666CC11CF7DC170097389F /* SearchViewController.swift */; };
@@ -28,7 +27,6 @@
 		A36F4DB41CE5834C00DDFC85 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A36F4DB21CE5834C00DDFC85 /* LaunchScreen.storyboard */; };
 		A36F4DBF1CE5834C00DDFC85 /* TVMovieAppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36F4DBE1CE5834C00DDFC85 /* TVMovieAppTests.swift */; };
 		A36F4DCA1CE5834C00DDFC85 /* TVMovieAppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = A36F4DC91CE5834C00DDFC85 /* TVMovieAppUITests.swift */; };
-		A36F4DD91CE5898900DDFC85 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A36F4DD81CE5898900DDFC85 /* Alamofire.framework */; };
 		A3EB3B9E1CEECDFD004C9D12 /* TVMClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EB3B9D1CEECDFD004C9D12 /* TVMClient.swift */; };
 		A3EB3BA51CEEE09B004C9D12 /* Movie+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EB3B9F1CEEE09B004C9D12 /* Movie+CoreDataProperties.swift */; };
 		A3EB3BA61CEEE09B004C9D12 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3EB3BA01CEEE09B004C9D12 /* Movie.swift */; };
@@ -102,8 +100,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				A36F4DD91CE5898900DDFC85 /* Alamofire.framework in Frameworks */,
-				6F6265921CF951C200E2C5D7 /* AlamofireImage.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
