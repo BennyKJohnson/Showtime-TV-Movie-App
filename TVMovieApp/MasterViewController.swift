@@ -21,9 +21,10 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     
     // TODO: May be desirable to move all notification data/functionality to its own file.
     struct FilmNotification {
-        var film:    Film
-        var message: String
-        var action:  String
+        var name:        String!
+        var message:     String!
+        var action:      String!
+        var releaseDate: NSDate!
     }
     
     override func viewDidLoad() {
@@ -336,14 +337,33 @@ extension MasterViewController: SearchResultsViewControllerDelegate {
         let films = self.fetchedResultsController.fetchedObjects as! [Film]
         
         for film in films {
+            var notification = FilmNotification()
+            
+            notification.name = film.name
+            
             if film is Movie {
-                let notification = FilmNotification(film: film, message: "is out now!", action: "movie")
+                notification.releaseDate = film.releaseDate
+                notification.message     = "is out now!"
+                notification.action      = "movie"
+                
                 scheduleFilmForNotification(self, notifyObject: notification)
             } else if film is Show {
-                // let notification = FilmNotification(film: film, message: "airs today!", action: "show")
-                // scheduleFilmForNotification(self, notifyObject: notification)
+                let show       = film as! Show
+                let nextSeason = show.showSeasons.last!
+
+                notification.releaseDate = nextSeason.airDate
+                notification.message     = "- new season out now!"
+                notification.action      = "season"
                 
-                // ...
+                scheduleFilmForNotification(self, notifyObject: notification)
+                
+                for episode in nextSeason.episodes! where episode.airDate! != nil {
+                    notification.releaseDate = episode.airDate
+                    notification.message     = "- new episode out now!"
+                    notification.action      = "episode"
+                        
+                    scheduleFilmForNotification(self, notifyObject: notification)
+                }
             } else {
                 print("Error: film type not supported.")
             }
@@ -362,10 +382,9 @@ extension MasterViewController: SearchResultsViewControllerDelegate {
         }
         
         let notification = UILocalNotification()
-        let film         = notifyObject.film
 
-        notification.fireDate    = film.releaseDate   // Used to test: NSDate(timeIntervalSinceNow: 5)
-        notification.alertBody   = "\(film.name) \(notifyObject.message)"
+        notification.fireDate    = NSDate(timeIntervalSinceNow: 5)
+        notification.alertBody   = "\(notifyObject.name) \(notifyObject.message)"
         notification.alertAction = notifyObject.action
         notification.soundName   = UILocalNotificationDefaultSoundName
         
