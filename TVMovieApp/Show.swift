@@ -14,4 +14,43 @@ class Show: Film {
 
 // Insert code here to add functionality to your managed object subclass
 
+    var showSeasons: [Season] {
+        return seasons?.array as? [Season] ?? []
+    }
+    
+    var nextEpisodeAirDate: NSDate? {
+        
+        let date = NSDate()
+        if let releaseDate = releaseDate {
+            
+            if !hasBeenReleased {
+                return releaseDate
+            } else {
+                
+                // Has already been release
+                if let lastSeason = showSeasons.last {
+                    if let seasonReleaseDate = lastSeason.airDate {
+
+                        if  date <= seasonReleaseDate {
+                            // Latest Season hasn't started
+                            return seasonReleaseDate
+                        } else {
+                            
+                            // Season has already started
+                            // Get the next episode to air
+                            for episode in lastSeason.seasonEpisodes where !episode.hasAired {
+                                return episode.airDate!
+                            }
+                            
+                        }
+                        
+                        
+                    }
+                }
+            }
+            
+        }
+        
+        return nil
+    }
 }

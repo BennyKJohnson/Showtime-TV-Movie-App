@@ -1,5 +1,5 @@
 //
-//  Episode+CoreDataProperties.swift
+//  Season+CoreDataProperties.swift
 //  Showtime
 //
 //  Created by Benjamin Johnson on 29/05/2016.
@@ -12,14 +12,16 @@
 import Foundation
 import CoreData
 
-extension Episode {
+extension Season {
 
-    @NSManaged var airDate: NSDate?
+    @NSManaged var identifier: String?
     @NSManaged var name: String?
-    @NSManaged var episodeNumber: NSNumber?
     @NSManaged var overview: String?
-    @NSManaged var identifier: String
-    @NSManaged var seasonNumber: NSNumber?
-    @NSManaged var season: Season?
+    @NSManaged var airDate: NSDate?
+    @NSManaged var number: NSNumber
+    @NSManaged var episodeCount: NSNumber?
+    @NSManaged var posterURL: String?
+    @NSManaged var episodes: NSOrderedSet?
+    @NSManaged var show: Show?
 
 }

@@ -14,6 +14,8 @@ class FilmCell: UITableViewCell {
     
     @IBOutlet weak var titleTextLabel: UILabel!
     
+    @IBOutlet weak var subtitleTextLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

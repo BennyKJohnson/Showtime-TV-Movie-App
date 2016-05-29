@@ -20,7 +20,12 @@ class Film: NSManagedObject {
         } else {
             return "TV Shows"
         }
-        
     }
     
+    var hasBeenReleased: Bool {
+        if let releaseDate = releaseDate {
+            return NSDate() >= releaseDate
+        }
+        return false
+    }
 }

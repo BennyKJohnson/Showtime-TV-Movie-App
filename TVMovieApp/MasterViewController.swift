@@ -150,6 +150,22 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
     func configureCell(cell: FilmCell, withObject object: Film) {
         cell.titleTextLabel.text = object.name
         cell.posterImageView.af_setImageWithURL(NSURL(string: object.posterURL)!)
+        
+        if let show = object as? Show {
+            if let releaseDate = show.nextEpisodeAirDate {
+                cell.subtitleTextLabel.text = releaseDate.stringFormat ?? ""
+            } else {
+                cell.subtitleTextLabel.text = ""
+            }
+        } else {
+            if let releaseDate = object.releaseDate {
+                cell.subtitleTextLabel.text = releaseDate.stringFormat ?? ""
+            } else {
+                cell.subtitleTextLabel.text = ""
+            }
+        }
+      
+        
 
     }
 
@@ -224,15 +240,6 @@ class MasterViewController: UITableViewController, NSFetchedResultsControllerDel
         self.tableView.endUpdates()
     }
 
-    /*
-     // Implementing the above methods to update the table view in response to individual changes may have performance implications if a large number of changes are made simultaneously. If this proves to be an issue, you can instead just implement controllerDidChangeContent: which notifies the delegate that all section and object changes have been processed.
-     
-     func controllerDidChangeContent(controller: NSFetchedResultsController) {
-         // In the simplest, most efficient, case, reload the table view.
-         self.tableView.reloadData()
-     }
-     */
-
 }
 
 extension MasterViewController: UISearchResultsUpdating {
@@ -256,6 +263,21 @@ extension MasterViewController: UISearchResultsUpdating {
 
 extension MasterViewController: SearchResultsViewControllerDelegate {
     
+    func insertShow(show: Show) {
+        
+        // Move seasons into main context
+        for season in show.showSeasons {
+            // Move Episodes into main context
+            for episode in season.seasonEpisodes {
+                self.managedObjectContext?.insertObject(episode)
+            }
+            
+            self.managedObjectContext?.insertObject(season)
+        }
+        
+        
+    }
+    
     
     func didSelectSearchResult(searchResult: SearchResult) {
         
@@ -265,9 +287,8 @@ extension MasterViewController: SearchResultsViewControllerDelegate {
         // Get SearchResult Detail
         client.getFilmDetail(searchResult) { (film, error) in
             if  let film = film   {
-                
-                
-                self.managedObjectContext?.insertObject(film)
+                film.status = NSNumber(integer: 0)
+
                 do {
                     try self.managedObjectContext?.save()
                 } catch {
@@ -286,6 +307,7 @@ extension MasterViewController: SearchResultsViewControllerDelegate {
                 
                 // Show Error
                 self.presentViewController(errorAlertController, animated: true, completion: nil)
+                
             
             }
             

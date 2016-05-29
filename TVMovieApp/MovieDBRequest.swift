@@ -15,6 +15,8 @@ enum MovieDBRequest: URLRequestConvertible {
     
     case GetMovie(identifier: String, type: FilmType)
     
+    case GetSeason(identifier: String, season: Int)
+    
     static let  baseURL = NSURL(string: "https://api.themoviedb.org/3/")!
     
     static let imageBaseURL = "https://image.tmdb.org/t/p/w185"
@@ -31,6 +33,9 @@ enum MovieDBRequest: URLRequestConvertible {
             return "search/multi"
         case .GetMovie(let identifier, let type):
             return "\(type.rawValue)/\(identifier)"
+        case .GetSeason(let identifier, let season):
+            return "tv/\(identifier)/season/\(season)"
+
         }
     }
     

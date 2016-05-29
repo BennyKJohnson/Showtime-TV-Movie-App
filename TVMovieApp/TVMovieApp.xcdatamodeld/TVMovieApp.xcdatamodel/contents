@@ -1,18 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model userDefinedModelVersionIdentifier="" type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="10171" systemVersion="15C50" minimumToolsVersion="Automatic">
     <entity name="Episode" representedClassName=".Episode" syncable="YES">
-        <attribute name="airedDate" optional="YES" attributeType="Date" syncable="YES"/>
-        <attribute name="episodeName" attributeType="String" syncable="YES"/>
-        <attribute name="number" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <attribute name="overview" attributeType="String" syncable="YES"/>
+        <attribute name="airDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="episodeNumber" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="identifier" attributeType="String" indexed="YES" syncable="YES"/>
+        <attribute name="name" attributeType="String" syncable="YES"/>
+        <attribute name="overview" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="seasonNumber" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
-        <relationship name="show" maxCount="1" deletionRule="Nullify" destinationEntity="Show" inverseName="episodes" inverseEntity="Show" syncable="YES"/>
-    </entity>
-    <entity name="Event">
-        <attribute name="timeStamp" optional="YES" attributeType="Date">
-            <userInfo/>
-        </attribute>
-        <userInfo/>
+        <relationship name="season" maxCount="1" deletionRule="Nullify" destinationEntity="Season" inverseName="episodes" inverseEntity="Season" syncable="YES"/>
     </entity>
     <entity name="Film" representedClassName=".Film" syncable="YES">
         <attribute name="genre" attributeType="String" syncable="YES"/>
@@ -31,17 +26,28 @@
         </uniquenessConstraints>
     </entity>
     <entity name="Movie" representedClassName=".Movie" parentEntity="Film" syncable="YES"/>
+    <entity name="Season" representedClassName=".Season" syncable="YES">
+        <attribute name="airDate" optional="YES" attributeType="Date" syncable="YES"/>
+        <attribute name="episodeCount" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="identifier" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="name" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="number" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="overview" optional="YES" attributeType="String" syncable="YES"/>
+        <attribute name="posterURL" optional="YES" attributeType="String" syncable="YES"/>
+        <relationship name="episodes" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Episode" inverseName="season" inverseEntity="Episode" syncable="YES"/>
+        <relationship name="show" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Show" inverseName="seasons" inverseEntity="Show" syncable="YES"/>
+    </entity>
     <entity name="Show" representedClassName=".Show" parentEntity="Film" syncable="YES">
         <attribute name="airsDayOfWeek" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="airsTime" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="network" optional="YES" attributeType="String" syncable="YES"/>
-        <relationship name="episodes" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Episode" inverseName="show" inverseEntity="Episode" syncable="YES"/>
+        <relationship name="seasons" optional="YES" toMany="YES" deletionRule="Nullify" ordered="YES" destinationEntity="Season" inverseName="show" inverseEntity="Season" syncable="YES"/>
     </entity>
     <elements>
-        <element name="Episode" positionX="288" positionY="216" width="128" height="135"/>
-        <element name="Event" positionX="261" positionY="189" width="128" height="60"/>
+        <element name="Episode" positionX="288" positionY="216" width="128" height="150"/>
         <element name="Film" positionX="279" positionY="279" width="128" height="180"/>
         <element name="Movie" positionX="261" positionY="198" width="128" height="45"/>
         <element name="Show" positionX="270" positionY="207" width="128" height="105"/>
+        <element name="Season" positionX="279" positionY="306" width="128" height="180"/>
     </elements>
 </model>

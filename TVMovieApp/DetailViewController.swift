@@ -36,6 +36,13 @@ class DetailViewController: UITableViewController {
                 
                 // Setup Cells specific to TV Show
                 print("Showing Detail for TV Show: " + show.name)
+                for season in show.showSeasons {
+                    print("Season \(season.number)")
+                    for episode in season.seasonEpisodes {
+                        print("\tEpisode \(episode.episodeNumber!)")
+                    }
+                }
+                
                 
             } else if let movie = film as? Movie {
                 

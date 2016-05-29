@@ -17,6 +17,6 @@ extension Show {
     @NSManaged var airsDayOfWeek: String
     @NSManaged var airsTime: String
     @NSManaged var network: String
-    @NSManaged var episodes: NSManagedObject?
+    @NSManaged var seasons: NSOrderedSet?
 
 }

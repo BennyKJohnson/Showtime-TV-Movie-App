@@ -1,5 +1,5 @@
 //
-//  Episode.swift
+//  Season.swift
 //  Showtime
 //
 //  Created by Benjamin Johnson on 29/05/2016.
@@ -10,18 +10,11 @@ import Foundation
 import CoreData
 
 
-class Episode: NSManagedObject {
+class Season: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass
 
-    var hasAired: Bool {
-        if let airDate = airDate {
-            return NSDate() > airDate
-        }
-        
-        return false
+    var seasonEpisodes: [Episode] {
+        return episodes?.array as? [Episode] ?? []
     }
-    
-    
-    
 }

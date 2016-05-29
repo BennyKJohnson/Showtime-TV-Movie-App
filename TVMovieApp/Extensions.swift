@@ -30,3 +30,25 @@ extension String {
         return self[Range(start ..< end)]
     }
 }
+
+extension NSDate {
+    
+    var stringFormat: String? {
+        
+        return Formatter.sharedFormatter.dateFormatter.stringFromDate(self)
+        
+    }
+
+ 
+}
+
+// http://stackoverflow.com/questions/26198526/nsdate-comparison-using-swift
+extension NSDate: Comparable { }
+
+public func ==(lhs: NSDate, rhs: NSDate) -> Bool {
+    return lhs === rhs || lhs.compare(rhs) == .OrderedSame
+}
+
+public func <(lhs: NSDate, rhs: NSDate) -> Bool {
+    return lhs.compare(rhs) == .OrderedAscending
+}
