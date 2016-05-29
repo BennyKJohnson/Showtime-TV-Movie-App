@@ -336,15 +336,14 @@ extension MasterViewController: SearchResultsViewControllerDelegate {
         let films = self.fetchedResultsController.fetchedObjects as! [Film]
         
         for film in films {
-            let isMovie = ((film as? Movie) != nil)
-            let isShow  = ((film as? Show)  != nil)
-            
-            if isMovie {
+            if film is Movie {
                 let notification = FilmNotification(film: film, message: "is out now!", action: "movie")
                 scheduleFilmForNotification(self, notifyObject: notification)
-            } else if isShow {
+            } else if film is Show {
                 // let notification = FilmNotification(film: film, message: "airs today!", action: "show")
                 // scheduleFilmForNotification(self, notifyObject: notification)
+                
+                // ...
             } else {
                 print("Error: film type not supported.")
             }
