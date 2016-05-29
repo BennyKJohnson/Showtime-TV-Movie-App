@@ -12,7 +12,7 @@ class DescriptionTableViewCell: UITableViewCell {
 
     @IBOutlet weak var titleTextLabel: UILabel!
     
-    @IBOutlet weak var descriptionTextLabel: UILabel!
+    @IBOutlet weak var descriptionTextView: TruncateTextView!
     
     override func awakeFromNib() {
         super.awakeFromNib()
