@@ -26,3 +26,28 @@ class DescriptionTableViewCell: UITableViewCell {
     }
 
 }
+
+
+class InformationTableViewCell: UITableViewCell {
+    
+    @IBOutlet weak var textLabel1: UILabel!
+    @IBOutlet weak var detailTextLabel1: UILabel!
+
+    @IBOutlet weak var textLabel2: UILabel!
+    @IBOutlet weak var detailTextLabel2: UILabel!
+    
+    @IBOutlet weak var textLabel3: UILabel!
+    @IBOutlet weak var detailTextLabel3: UILabel!
+    
+    override func awakeFromNib() {
+        super.awakeFromNib()
+        // Initialization code
+    }
+    
+    override func setSelected(selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+        
+        // Configure the view for the selected state
+    }
+    
+}

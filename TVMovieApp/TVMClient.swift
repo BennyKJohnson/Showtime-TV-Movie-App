@@ -305,6 +305,12 @@ final class ShowtimeClient {
             return genre["name"] as! String
         })
         
+        let networks = (dictionary["networks"] as! [[String: AnyObject]]).map({ (network) -> String in
+            return network["name"] as! String
+        })
+        
+        let runtimes = dictionary["episode_run_time"] as! [NSNumber]
+        
         // Parse Seasons
         let seasons = (dictionary["seasons"] as! [[String: AnyObject]]).map({ (seasonDictionary) -> Season in
             
@@ -336,7 +342,7 @@ final class ShowtimeClient {
         let showEntity = NSEntityDescription.entityForName("Show", inManagedObjectContext: self.managedObjectContext)!
         let show = Show(entity: showEntity, insertIntoManagedObjectContext: managedObjectContext)
         show.seasons = NSOrderedSet(array: seasons)
-        
+        show.network = networks.first
         film = show
 
         film.identifier = id
@@ -346,6 +352,7 @@ final class ShowtimeClient {
         film.rating = dictionary[MovieDBPropertyKey.ratingKey] as! NSNumber
         film.genre = genres.first ?? "Unknown"
         film.releaseDate = self.RFC3339DateFormatter.dateFromString(releaseDate)!
+        film.runtime = runtimes.first
         
         return show
     }

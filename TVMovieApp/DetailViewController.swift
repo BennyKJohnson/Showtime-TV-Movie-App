@@ -10,7 +10,8 @@ import UIKit
 
 enum DetailCellType {
     case DescriptionCell(title: String, body: String)
-    
+    case HeaderCell
+    case InformationCell
     
 }
 
@@ -18,7 +19,7 @@ class DetailViewController: UITableViewController {
 
     var cells: [DetailCellType] = []
     
-    var film: Film? {
+    var film: Film! {
         didSet {
             // Update the view.
             self.configureView()
@@ -31,7 +32,10 @@ class DetailViewController: UITableViewController {
             title = film.name
             
             cells = []
+            cells.append(DetailCellType.HeaderCell)
             cells.append(DetailCellType.DescriptionCell(title: "Description", body: film.overview))
+            cells.append(DetailCellType.InformationCell)
+            
             if let show = film as? Show {
                 
                 // Setup Cells specific to TV Show
@@ -86,6 +90,13 @@ class DetailViewController: UITableViewController {
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cellType = cells[indexPath.row]
         switch cellType {
+        case .HeaderCell:
+            let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! FilmCell
+            cell.titleTextLabel.text = film.name
+            cell.posterImageView.af_setImageWithURL(NSURL(string: film.posterURL)!)
+            cell.subtitleTextLabel.text = ""
+        
+            return cell
         case .DescriptionCell(let title, let body):
             
             let cell = tableView.dequeueReusableCellWithIdentifier("DescriptionCell", forIndexPath: indexPath) as! DescriptionTableViewCell
@@ -94,7 +105,29 @@ class DetailViewController: UITableViewController {
             cell.descriptionTextView.delegate = self
         
             return cell
+        case .InformationCell:
             
+            let cell = tableView.dequeueReusableCellWithIdentifier("InformationCell", forIndexPath: indexPath) as! InformationTableViewCell
+            if let show = film as? Show {
+                cell.textLabel1.text = "Network"
+                cell.detailTextLabel1.text = show.network
+
+            } else if let movie = film as? Movie {
+                cell.textLabel1.text = "Rating"
+                cell.detailTextLabel1.text = "\(movie.rating)"
+            }
+            
+            cell.textLabel2.text = "Genre"
+            cell.detailTextLabel2.text = film.genre
+            
+            cell.textLabel3.text = "Run Time"
+            if let runtime = film.runtime {
+                cell.detailTextLabel3.text = "\(runtime)"
+            } else {
+                cell.detailTextLabel3.text = "Unknown"
+            }
+            
+            return cell
         }
         
         
@@ -125,7 +158,7 @@ extension DetailViewController: UITextViewDelegate {
         
         // Show Detail
         if let truncatedTextView = textView as? TruncateTextView {
-            truncatedTextView.isTruncated = !truncatedTextView.isTruncated
+            truncatedTextView.shouldTruncated = false
             tableView.beginUpdates()
             tableView.endUpdates()
             

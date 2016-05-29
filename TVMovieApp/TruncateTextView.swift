@@ -19,14 +19,14 @@ class TruncateTextView: UITextView {
     
     var truncateCharacterLimit = 250
     
-    var isTruncated: Bool = true {
+    var shouldTruncated: Bool = true {
         didSet {
             setContentAttributedString()
         }
     }
     
     var truncatedString: String {
-        if isTruncated {
+        if shouldTruncated {
             if content.length > truncateCharacterLimit {
                 return content[0...truncateCharacterLimit] + "..."
             }
@@ -37,7 +37,7 @@ class TruncateTextView: UITextView {
     
     func setContentAttributedString() {
         
-        if isTruncated {
+        if shouldTruncated {
             let contentAttributeString = NSMutableAttributedString(string: truncatedString + "more")
             contentAttributeString.addAttribute(NSLinkAttributeName, value: "showtime://more", range: NSRange(location: truncatedString.length, length: 4))
             self.attributedText = contentAttributeString
