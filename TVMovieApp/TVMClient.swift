@@ -291,6 +291,8 @@ final class ShowtimeClient {
         film.genre = genres.first ?? "Unknown"
         film.releaseDate = self.RFC3339DateFormatter.dateFromString(releaseDate)!
         film.runtime = dictionary[MovieDBPropertyKey.runtimeKey] as! NSNumber
+        film.sectionTitle = "Movies"
+
         
         return movie
     }
@@ -356,6 +358,7 @@ final class ShowtimeClient {
         film.genre = genres.first ?? "Unknown"
         film.releaseDate = self.RFC3339DateFormatter.dateFromString(releaseDate)!
         film.runtime = runtimes.first
+        film.sectionTitle = "TV Shows"
         
         return show
     }

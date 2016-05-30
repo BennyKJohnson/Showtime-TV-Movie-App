@@ -13,7 +13,7 @@ import CoreData
 class Film: NSManagedObject {
 
 // Insert code here to add functionality to your managed object subclass
-    
+    /*
     var sectionTitle: String {
         if let movie = self as? Movie {
             return "Movies"
@@ -21,7 +21,7 @@ class Film: NSManagedObject {
             return "TV Shows"
         }
     }
-    
+    */
     var hasBeenReleased: Bool {
         if let releaseDate = releaseDate {
             return NSDate() >= releaseDate
