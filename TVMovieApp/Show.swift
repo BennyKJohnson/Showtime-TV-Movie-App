@@ -18,6 +18,10 @@ class Show: Film {
         return seasons?.array as? [Season] ?? []
     }
     
+    var seasonsCount: Int {
+        return showSeasons.count
+    }
+    
     var nextEpisodeAirDate: NSDate? {
         
         let date = NSDate()
