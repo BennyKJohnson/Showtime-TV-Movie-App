@@ -23,5 +23,6 @@ extension Film {
     @NSManaged var genre: String
     @NSManaged var identifier: String
     @NSManaged var status: NSNumber?
+    @NSManaged var sectionTitle: String
 
 }

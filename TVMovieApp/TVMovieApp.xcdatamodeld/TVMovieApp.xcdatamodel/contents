@@ -18,6 +18,7 @@
         <attribute name="rating" attributeType="Double" minValueString="0" maxValueString="10" syncable="YES"/>
         <attribute name="releaseDate" attributeType="Date" syncable="YES"/>
         <attribute name="runtime" optional="YES" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
+        <attribute name="sectionTitle" optional="YES" attributeType="String" syncable="YES"/>
         <attribute name="status" attributeType="Integer 16" defaultValueString="0" syncable="YES"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
@@ -45,9 +46,9 @@
     </entity>
     <elements>
         <element name="Episode" positionX="288" positionY="216" width="128" height="150"/>
-        <element name="Film" positionX="279" positionY="279" width="128" height="180"/>
+        <element name="Film" positionX="279" positionY="279" width="128" height="195"/>
         <element name="Movie" positionX="261" positionY="198" width="128" height="45"/>
-        <element name="Show" positionX="270" positionY="207" width="128" height="105"/>
         <element name="Season" positionX="279" positionY="306" width="128" height="180"/>
+        <element name="Show" positionX="270" positionY="207" width="128" height="105"/>
     </elements>
 </model>
