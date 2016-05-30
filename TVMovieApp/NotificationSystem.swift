@@ -43,7 +43,6 @@ struct NotificationSystem {
                 let nextSeason   = show.showSeasons.last!
                 let notification = FilmNotification(name: film.name, message: "- new season out now!", action: "season", releaseDate: nextSeason.airDate!)
                 
-                print("\(film.name) number of seasons: \(show.seasonsCount)")
                 scheduleFilmForNotification(notification)
                 
                 // Schedule notifications for episodes in the upcoming season.
