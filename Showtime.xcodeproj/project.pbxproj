@@ -15,6 +15,7 @@
 		6F49FD6B1CFA97E400F88B34 /* TruncateTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F49FD6A1CFA97E400F88B34 /* TruncateTextView.swift */; };
 		6F6265921CF951C200E2C5D7 /* AlamofireImage.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6F6265911CF951C200E2C5D7 /* AlamofireImage.framework */; };
 		6F6265941CF95E8700E2C5D7 /* FilmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F6265931CF95E8700E2C5D7 /* FilmCell.swift */; };
+		A32031CE1CFBE492001179A3 /* FilmNotification.swift in Sources */ = {isa = PBXBuildFile; fileRef = A32031CD1CFBE491001179A3 /* FilmNotification.swift */; };
 		A35CF8301CF810FA005873BA /* ShowtimeDataTypes.swift in Sources */ = {isa = PBXBuildFile; fileRef = A35CF82F1CF810FA005873BA /* ShowtimeDataTypes.swift */; };
 		A3666CC21CF7DC170097389F /* SearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3666CC11CF7DC170097389F /* SearchViewController.swift */; };
 		A3666CC41CF7DD770097389F /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3666CC31CF7DD770097389F /* Extensions.swift */; };
@@ -66,6 +67,7 @@
 		6F49FD6A1CFA97E400F88B34 /* TruncateTextView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TruncateTextView.swift; sourceTree = "<group>"; };
 		6F6265911CF951C200E2C5D7 /* AlamofireImage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AlamofireImage.framework; path = Carthage/Build/iOS/AlamofireImage.framework; sourceTree = "<group>"; };
 		6F6265931CF95E8700E2C5D7 /* FilmCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilmCell.swift; sourceTree = "<group>"; };
+		A32031CD1CFBE491001179A3 /* FilmNotification.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FilmNotification.swift; sourceTree = "<group>"; };
 		A35CF82F1CF810FA005873BA /* ShowtimeDataTypes.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShowtimeDataTypes.swift; sourceTree = "<group>"; };
 		A3666CC11CF7DC170097389F /* SearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SearchViewController.swift; sourceTree = "<group>"; };
 		A3666CC31CF7DD770097389F /* Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
@@ -153,6 +155,7 @@
 				A36F4DD71CE5863B00DDFC85 /* Models */,
 				A36F4DA41CE5834C00DDFC85 /* AppDelegate.swift */,
 				A36F4DA91CE5834C00DDFC85 /* MasterViewController.swift */,
+				A32031CD1CFBE491001179A3 /* FilmNotification.swift */,
 				A36F4DB21CE5834C00DDFC85 /* LaunchScreen.storyboard */,
 				A36F4DAD1CE5834C00DDFC85 /* Main.storyboard */,
 				A36F4DB01CE5834C00DDFC85 /* Assets.xcassets */,
@@ -382,6 +385,7 @@
 				A3EB3BAA1CEEE09B004C9D12 /* Film.swift in Sources */,
 				A3666CC21CF7DC170097389F /* SearchViewController.swift in Sources */,
 				6F49FD681CFA806800F88B34 /* Season+CoreDataProperties.swift in Sources */,
+				A32031CE1CFBE492001179A3 /* FilmNotification.swift in Sources */,
 				6F49FD691CFA806800F88B34 /* Season.swift in Sources */,
 				A3EB3BA81CEEE09B004C9D12 /* Show.swift in Sources */,
 				A35CF8301CF810FA005873BA /* ShowtimeDataTypes.swift in Sources */,
