@@ -59,7 +59,6 @@ struct NotificationSystem {
     func scheduleFilmForNotification(notifyObject: FilmNotification) {
         // If the release date is before now, then there's no reason to schedule a notification.
         if notifyObject.releaseDate < NSDate() {
-            print("\(notifyObject.name) \(notifyObject.action): \(notifyObject.releaseDate)")
             return
         }
         
