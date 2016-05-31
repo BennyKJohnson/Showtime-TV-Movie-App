@@ -33,11 +33,19 @@ class InformationTableViewCell: UITableViewCell {
     @IBOutlet weak var textLabel1: UILabel!
     @IBOutlet weak var detailTextLabel1: UILabel!
 
+    @IBOutlet weak var textLabel4: UILabel!
     @IBOutlet weak var textLabel2: UILabel!
     @IBOutlet weak var detailTextLabel2: UILabel!
     
     @IBOutlet weak var textLabel3: UILabel!
     @IBOutlet weak var detailTextLabel3: UILabel!
+    
+    @IBOutlet weak var rating: UILabel!
+    @IBOutlet weak var detailRating: UILabel!
+
+    @IBOutlet weak var numOfSeasons: UILabel!
+    @IBOutlet weak var numOfSeasonsDetail: UILabel!
+    
     
     override func awakeFromNib() {
         super.awakeFromNib()

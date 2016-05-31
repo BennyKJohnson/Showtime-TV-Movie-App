@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H1p-Uh-vWS">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="H1p-Uh-vWS">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -139,11 +139,11 @@
                                     <outlet property="titleTextLabel" destination="hlr-gS-STN" id="XOA-cD-fDb"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InformationCell" rowHeight="104" id="c88-4G-o0H" customClass="InformationTableViewCell" customModule="Showtime" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="299" width="600" height="104"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InformationCell" rowHeight="145" id="c88-4G-o0H" customClass="InformationTableViewCell" customModule="Showtime" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="299" width="600" height="145"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="c88-4G-o0H" id="twc-aW-Sl7">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="103"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="144"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bB-Rd-FSM">
@@ -156,7 +156,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="AcN-mv-6f1">
-                                            <rect key="frame" x="15" y="36" width="114" height="63"/>
+                                            <rect key="frame" x="15" y="36" width="114" height="98"/>
                                             <subviews>
                                                 <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="KJV-ef-Qab">
                                                     <rect key="frame" x="0.0" y="0.0" width="114" height="21"/>
@@ -221,22 +221,68 @@
                                                         </label>
                                                     </subviews>
                                                 </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="9lu-7C-D2A">
+                                                    <rect key="frame" x="0.0" y="63" width="114" height="14"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Network" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vri-nA-LcW" userLabel="Rating">
+                                                            <rect key="frame" x="0.0" y="0.0" width="73" height="14"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="73" id="6cN-yW-VIT"/>
+                                                                <constraint firstAttribute="height" constant="21" id="htZ-gi-vcj"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rEv-B1-CxG" userLabel="Detail Rating">
+                                                            <rect key="frame" x="85" y="0.0" width="29" height="14"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                                            <color key="textColor" red="0.42745098040000001" green="0.42745098040000001" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="jeV-CZ-D3Q">
+                                                    <rect key="frame" x="0.0" y="77" width="114" height="21"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Network" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yTj-yl-ryv" userLabel="Seasons Number">
+                                                            <rect key="frame" x="0.0" y="0.0" width="73" height="21"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="width" constant="73" id="Usl-Bm-vbx"/>
+                                                                <constraint firstAttribute="height" constant="21" id="qIb-d3-Pmx"/>
+                                                            </constraints>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iuA-EC-HPb" userLabel="Seasons Number Detail">
+                                                            <rect key="frame" x="85" y="0.0" width="29" height="21"/>
+                                                            <fontDescription key="fontDescription" style="UICTFontTextStyleCaption2"/>
+                                                            <color key="textColor" red="0.42745098040000001" green="0.42745098040000001" blue="0.44705882349999998" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
                                             </subviews>
                                         </stackView>
                                     </subviews>
                                     <constraints>
                                         <constraint firstAttribute="leadingMargin" secondItem="AcN-mv-6f1" secondAttribute="leading" constant="-7" id="8mz-bc-A3P"/>
                                         <constraint firstItem="5bB-Rd-FSM" firstAttribute="leading" secondItem="twc-aW-Sl7" secondAttribute="leadingMargin" constant="7" id="9kJ-CH-bht"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="AcN-mv-6f1" secondAttribute="bottom" constant="2" id="OgP-Qn-8WW"/>
                                         <constraint firstItem="5bB-Rd-FSM" firstAttribute="top" secondItem="twc-aW-Sl7" secondAttribute="topMargin" id="PJ5-8B-GpP"/>
                                         <constraint firstItem="AcN-mv-6f1" firstAttribute="top" secondItem="5bB-Rd-FSM" secondAttribute="bottom" constant="2" id="Uxq-ct-9AS"/>
-                                        <constraint firstAttribute="bottomMargin" secondItem="AcN-mv-6f1" secondAttribute="bottom" constant="-4" id="XhD-pA-uKm"/>
                                         <constraint firstItem="5bB-Rd-FSM" firstAttribute="trailing" secondItem="twc-aW-Sl7" secondAttribute="trailingMargin" constant="7" id="gVS-WZ-JY2"/>
                                     </constraints>
                                 </tableViewCellContentView>
                                 <connections>
+                                    <outlet property="detailRating" destination="rEv-B1-CxG" id="EbP-72-dVD"/>
                                     <outlet property="detailTextLabel1" destination="4af-8i-32r" id="TLp-N8-F2q"/>
                                     <outlet property="detailTextLabel2" destination="KtR-fM-P9D" id="bBx-De-dzm"/>
                                     <outlet property="detailTextLabel3" destination="0za-K6-EFD" id="CLs-PC-iT4"/>
+                                    <outlet property="numOfSeasons" destination="yTj-yl-ryv" id="NmA-c8-Wva"/>
+                                    <outlet property="numOfSeasonsDetail" destination="iuA-EC-HPb" id="Qoa-x4-e5t"/>
+                                    <outlet property="rating" destination="vri-nA-LcW" id="WoE-WO-FPL"/>
                                     <outlet property="textLabel1" destination="XqO-b8-VFl" id="GoL-Hc-5Uz"/>
                                     <outlet property="textLabel2" destination="wph-TT-2TV" id="JP3-cH-ugy"/>
                                     <outlet property="textLabel3" destination="p0j-JW-30H" id="j0v-gF-qDX"/>

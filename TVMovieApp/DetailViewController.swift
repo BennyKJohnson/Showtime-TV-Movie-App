@@ -114,7 +114,7 @@ class DetailViewController: UITableViewController {
 
             } else if let movie = film as? Movie {
                 cell.textLabel1.text = "Rating"
-                cell.detailTextLabel1.text = "\(movie.rating)"
+                cell.detailTextLabel1.text = "\(movie.rating)" + " / 10"
             }
             
             cell.textLabel2.text = "Genre"
@@ -122,10 +122,34 @@ class DetailViewController: UITableViewController {
             
             cell.textLabel3.text = "Run Time"
             if let runtime = film.runtime {
-                cell.detailTextLabel3.text = "\(runtime)"
+                cell.detailTextLabel3.text = "\(runtime)" + " min"
             } else {
                 cell.detailTextLabel3.text = "Unknown"
             }
+            
+            if let show = film as? Show {
+                cell.rating.text = "Rating"
+                let showRating = String(show.rating)
+                    cell.detailRating.text = "\(showRating)" + " / 10"
+                if showRating == "" {
+                    cell.detailRating.text = "Unknown"
+                }
+                
+                cell.numOfSeasons.text = "Seasons"
+                let numSeasons = String(show.seasonsCount)
+                cell.numOfSeasonsDetail.text = "\(numSeasons)"
+                if numSeasons == "" {
+                    cell.numOfSeasonsDetail.text = "Unknown"
+                }
+                
+            } else if let movie = film as? Movie {
+                cell.rating.text = ""
+                cell.detailRating.text = ""
+                
+                cell.numOfSeasons.text = ""
+                cell.numOfSeasonsDetail.text = ""
+            }
+
             
             return cell
         }
