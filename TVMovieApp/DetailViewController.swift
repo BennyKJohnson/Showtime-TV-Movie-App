@@ -147,8 +147,11 @@ class DetailViewController: UITableViewController {
                 }
                 
             } else if let movie = film as? Movie {
-                cell.rating.text = ""
-                cell.detailRating.text = ""
+                
+                if let releaseDate = movie.releaseDate{
+                    cell.rating.text = "Release date"
+                    cell.detailRating.text = releaseDate.stringFormat!
+                }
                 
                 cell.numOfSeasons.text = ""
                 cell.numOfSeasonsDetail.text = ""
@@ -187,9 +190,7 @@ class DetailViewController: UITableViewController {
                 if let lastEpisode = show.lastEpisodeToAir {
                     
                     let episodeNum = String(lastEpisode.episodeNumber!)
-                    
                     let seasonNumber = lastEpisode.season!.number.description
-                    
                     let labelStringLastAired = "Last episode aired: "
                     
                     let attributedString = NSMutableAttributedString(string: labelStringLastAired + "Season " + seasonNumber + " Episode " + episodeNum)
