@@ -13,11 +13,14 @@ import Alamofire
 class MasterViewController: UITableViewController, NSFetchedResultsControllerDelegate {
 
     var detailViewController: DetailViewController? = nil
+    
     var managedObjectContext: NSManagedObjectContext? = nil
 
     var searchController:UISearchController!// = UISearchController(searchResultsController: nil)!
     
     var client: ShowtimeClient!
+    
+    var showingErrorMessage = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -261,6 +264,33 @@ extension MasterViewController: UISearchResultsUpdating {
                     let searchViewController = searchController.searchResultsController as! SearchViewController
                     searchViewController.searchResults = results
                     searchViewController.tableView.reloadData()
+                } else if let error = error {
+                    print(error)
+                    
+                    let errorDescription: String
+                    
+                    switch error {
+                    case .InvalidData:
+                        errorDescription = "Received invalid data from server"
+                    case .Response(let systemError):
+                        errorDescription = systemError.localizedDescription
+                    case .ServerError:
+                        errorDescription = "Server error occured"
+                    }
+                    
+                    // Show error message
+                    if !self.showingErrorMessage {
+                        self.showingErrorMessage = true
+                        
+                        let alertController = UIAlertController(title: "Search Results Error", message: errorDescription, preferredStyle: .Alert)
+                        let okayAction = UIAlertAction(title: "OK", style: .Default, handler: { (action) in
+                            self.showingErrorMessage = false
+                        })
+                        
+                        alertController.addAction(okayAction)
+                        
+                        self.presentViewController(alertController, animated: true, completion: nil)
+                    }
                 }
             })
         }
