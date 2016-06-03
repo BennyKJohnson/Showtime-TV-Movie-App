@@ -146,7 +146,7 @@ class DetailViewController: UITableViewController {
                     cell.numOfSeasonsDetail.text = "Unknown"
                 }
                 
-            } else if let movie = film as? Movie {
+            } else if film is Movie {
                 cell.rating.text = ""
                 cell.detailRating.text = ""
                 
@@ -163,9 +163,7 @@ class DetailViewController: UITableViewController {
            
             
             if let show = film as? Show {
-                
-                if let season = show.showSeasons.last {
-                    
+                                    
                     if let airDate = show.nextEpisodeAirDate {
                         
                         let labelString = "Next episode airing: "
@@ -182,7 +180,7 @@ class DetailViewController: UITableViewController {
                         cell.nextEpisodeAir.text = ""
                     }
 
-                }
+                
                 
                 if let lastEpisode = show.lastEpisodeToAir {
                     

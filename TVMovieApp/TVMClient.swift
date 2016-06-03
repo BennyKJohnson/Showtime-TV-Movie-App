@@ -210,14 +210,14 @@ final class ShowtimeClient {
         
         let episode = Episode(entity: episodeEntity, insertIntoManagedObjectContext: managedObjectContext)
         
-        episode.name = dictionary[MovieDBPropertyKey.nameKey] as! String
+        episode.name = dictionary[MovieDBPropertyKey.nameKey] as? String
         
         if let airDate = dictionary[MovieDBPropertyKey.airDateKey] as? String {
             episode.airDate = self.RFC3339DateFormatter.dateFromString(airDate)
         }
         
-        episode.seasonNumber = dictionary[MovieDBPropertyKey.seasonNumberKey] as! NSNumber
-        episode.episodeNumber = dictionary[MovieDBPropertyKey.episodeNumberKey] as! NSNumber
+        episode.seasonNumber = dictionary[MovieDBPropertyKey.seasonNumberKey] as? NSNumber
+        episode.episodeNumber = dictionary[MovieDBPropertyKey.episodeNumberKey] as? NSNumber
         episode.identifier = "\(dictionary[MovieDBPropertyKey.identifierKey] as! NSNumber)"
         
         return episode
@@ -290,7 +290,7 @@ final class ShowtimeClient {
         film.rating = dictionary[MovieDBPropertyKey.ratingKey] as! NSNumber
         film.genre = genres.first ?? "Unknown"
         film.releaseDate = self.RFC3339DateFormatter.dateFromString(releaseDate)!
-        film.runtime = dictionary[MovieDBPropertyKey.runtimeKey] as! NSNumber
+        film.runtime = dictionary[MovieDBPropertyKey.runtimeKey] as? NSNumber
         film.sectionTitle = "Movies"
 
         
@@ -332,7 +332,7 @@ final class ShowtimeClient {
             if let airDate = seasonDictionary[MovieDBPropertyKey.airDateKey] as? String {
                 season.airDate = RFC3339DateFormatter.dateFromString(airDate)
             }
-            season.episodeCount = seasonDictionary[MovieDBPropertyKey.episodeCountKey] as! NSNumber
+            season.episodeCount = seasonDictionary[MovieDBPropertyKey.episodeCountKey] as? NSNumber
             season.number = seasonDictionary[MovieDBPropertyKey.seasonNumberKey] as! NSNumber
             season.identifier = "\(identifier)"
             season.posterURL = posterURL

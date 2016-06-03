@@ -40,7 +40,7 @@ enum TVDBRequest: URLRequestConvertible {
             return "search/series"
         case .Auth:
             return "login"
-        case .GetSeries(let identifier, let _):
+        case .GetSeries(let identifier):
             return "series/\(identifier)"
         case .GetEpisodes(let identifier):
             return "series/\(identifier)/episodes"
