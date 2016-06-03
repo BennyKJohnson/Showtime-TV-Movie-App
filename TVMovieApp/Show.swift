@@ -22,6 +22,26 @@ class Show: Film {
         return showSeasons.count
     }
     
+    var lastEpisodeToAir: Episode? {
+        
+        var currentEpisode: Episode?
+        
+        for episode in showSeasons.last?.seasonEpisodes ?? [] {
+            
+            let episodeAir = episode.airDate
+            
+            if(episodeAir < NSDate())
+            {
+                currentEpisode = episode
+                
+            }
+            
+        }
+        
+        
+        return currentEpisode
+    }
+    
     var nextEpisodeAirDate: NSDate? {
         
         let date = NSDate()

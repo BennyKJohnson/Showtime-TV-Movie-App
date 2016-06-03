@@ -12,6 +12,7 @@ enum DetailCellType {
     case DescriptionCell(title: String, body: String)
     case HeaderCell
     case InformationCell
+    case EpisodeDetailCell
     
 }
 
@@ -26,6 +27,8 @@ class DetailViewController: UITableViewController {
         }
     }
     
+     var count = 0
+    
     func configureView() {
         // Update the user interface for the detail item.
         if let film = self.film{
@@ -36,8 +39,9 @@ class DetailViewController: UITableViewController {
             cells.append(DetailCellType.DescriptionCell(title: "Description", body: film.overview))
             cells.append(DetailCellType.InformationCell)
             
+            
             if let show = film as? Show {
-                
+                cells.append(DetailCellType.EpisodeDetailCell)
                 // Setup Cells specific to TV Show
                 print("Showing Detail for TV Show: " + show.name)
                 for season in show.showSeasons {
@@ -151,6 +155,53 @@ class DetailViewController: UITableViewController {
             }
 
             
+            return cell
+            
+        case .EpisodeDetailCell:
+            let cell = tableView.dequeueReusableCellWithIdentifier("EpisodeDetailCell", forIndexPath: indexPath) as! EpisodeDescriptionCell
+            
+           
+            
+            if let show = film as? Show {
+                
+                if let season = show.showSeasons.last {
+                    
+                    if let airDate = show.nextEpisodeAirDate {
+                        
+                        let labelString = "Next episode airing: "
+                        let dateString = airDate.stringFormat!
+        
+                        let attributedString = NSMutableAttributedString(string: labelString + dateString)
+                      
+                        attributedString.addAttributes([NSFontAttributeName: UIFont.boldSystemFontOfSize(cell.nextEpisodeAir.font.pointSize)], range: NSMakeRange(0, labelString.length))
+                        
+                        cell.nextEpisodeAir.attributedText = attributedString
+   
+                    }else
+                    {
+                        cell.nextEpisodeAir.text = ""
+                    }
+
+                }
+                
+                if let lastEpisode = show.lastEpisodeToAir {
+                    
+                    let episodeNum = String(lastEpisode.episodeNumber!)
+                    
+                    let seasonNumber = lastEpisode.season!.number.description
+                    
+                    let labelStringLastAired = "Last episode aired: "
+                    
+                    let attributedString = NSMutableAttributedString(string: labelStringLastAired + "Season " + seasonNumber + " Episode " + episodeNum)
+                    
+                    attributedString.addAttributes([NSFontAttributeName: UIFont.boldSystemFontOfSize(cell.nextEpisodeAir.font.pointSize)], range: NSMakeRange(0, labelStringLastAired.length))
+                    
+                    cell.lastEpisodeAired.attributedText =  attributedString
+                    
+                }
+                
+                
+            }
             return cell
         }
         
