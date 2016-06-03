@@ -40,22 +40,13 @@ class DetailViewController: UITableViewController {
             cells.append(DetailCellType.InformationCell)
             
             
-            if let show = film as? Show {
-                cells.append(DetailCellType.EpisodeDetailCell)
+            if  film is Show {
                 // Setup Cells specific to TV Show
-                print("Showing Detail for TV Show: " + show.name)
-                for season in show.showSeasons {
-                    print("Season \(season.number)")
-                    for episode in season.seasonEpisodes {
-                        print("\tEpisode \(episode.episodeNumber!)")
-                    }
-                }
+                cells.append(DetailCellType.EpisodeDetailCell)
                 
                 
-            } else if let movie = film as? Movie {
+            } else if film is Movie {
                 
-                // Setup Cells specific to Movie
-                print("Showing Detail for Movie: " + movie.name)
             }
         }
     }

@@ -51,9 +51,7 @@ enum MovieDBRequest: URLRequestConvertible {
     
     var URLRequest: NSMutableURLRequest {
         let request = Alamofire.ParameterEncoding.URL.encode(NSMutableURLRequest(URL: MovieDBRequest.baseURL.URLByAppendingPathComponent(path)), parameters: parameters).0.mutableCopy() as! NSMutableURLRequest
-        request.HTTPMethod = method.rawValue
-        
-        print(request.URLString)
+        request.HTTPMethod = method.rawValue        
         return request
     }
 }

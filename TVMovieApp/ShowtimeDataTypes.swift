@@ -31,3 +31,21 @@ enum TVMClientError: ErrorType {
     case ServerError
     
 }
+
+struct MovieDBPropertyKey {
+    static let searchResultsKey = "results"
+    static let titleKey = "title"
+    static let nameKey = "name"
+    static let identifierKey = "id"
+    static let posterURLKey = "poster_path"
+    static let overviewKey = "overview"
+    static let ratingKey = "vote_average"
+    static let releaseDateKey = "release_date"
+    static let firstAirDateKey = "first_air_date"
+    static let airDateKey = "air_date"
+    static let episodesKey = "episodes"
+    static let seasonNumberKey = "season_number"
+    static let episodeCountKey = "episode_count"
+    static let episodeNumberKey = "episode_number"
+    static let runtimeKey = "runtime"
+}
