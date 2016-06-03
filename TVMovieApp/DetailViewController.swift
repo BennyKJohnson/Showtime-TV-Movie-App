@@ -164,7 +164,7 @@ class DetailViewController: UITableViewController {
     
     @IBAction func showActivityViewController(sender: AnyObject) {
         
-        let shareContent = film!.name
+        let shareContent = film!.name 
         
         let activityViewController = UIActivityViewController(activityItems: [shareContent], applicationActivities: nil)
         presentViewController(activityViewController, animated: true) {
