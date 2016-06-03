@@ -140,11 +140,18 @@ class DetailViewController: UITableViewController {
                 }
                 
                 cell.numOfSeasons.text = "Seasons"
-                let numSeasons = String(show.seasonsCount)
-                cell.numOfSeasonsDetail.text = "\(numSeasons)"
-                if numSeasons == "" {
-                    cell.numOfSeasonsDetail.text = "Unknown"
+                if let lastEpisode = show.lastEpisodeToAir {
+                    
+                    let seasonNumber = lastEpisode.season!.number.description
+                    
+                    if(seasonNumber != ""){
+                        cell.numOfSeasonsDetail.text = "\(seasonNumber)"}
+                    else{
+                        cell.numOfSeasonsDetail.text = "Unknown"
+                    }
+
                 }
+
                 
             } else if let movie = film as? Movie {
                 
@@ -162,8 +169,7 @@ class DetailViewController: UITableViewController {
             
         case .EpisodeDetailCell:
             let cell = tableView.dequeueReusableCellWithIdentifier("EpisodeDetailCell", forIndexPath: indexPath) as! EpisodeDescriptionCell
-            
-           
+
             
             if let show = film as? Show {
                                     
