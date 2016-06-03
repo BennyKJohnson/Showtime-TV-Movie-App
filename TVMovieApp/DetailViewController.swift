@@ -146,9 +146,12 @@ class DetailViewController: UITableViewController {
                     cell.numOfSeasonsDetail.text = "Unknown"
                 }
                 
-            } else if film is Movie {
-                cell.rating.text = ""
-                cell.detailRating.text = ""
+            } else if let movie = film as? Movie {
+                
+                if let releaseDate = movie.releaseDate{
+                    cell.rating.text = "Release date"
+                    cell.detailRating.text = releaseDate.stringFormat!
+                }
                 
                 cell.numOfSeasons.text = ""
                 cell.numOfSeasonsDetail.text = ""

@@ -120,11 +120,11 @@
                                     <outlet property="titleTextLabel" destination="hlr-gS-STN" id="XOA-cD-fDb"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InformationCell" rowHeight="196" id="c88-4G-o0H" customClass="InformationTableViewCell" customModule="Showtime" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="255" width="600" height="196"/>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="InformationCell" rowHeight="154" id="c88-4G-o0H" customClass="InformationTableViewCell" customModule="Showtime" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="255" width="600" height="154"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="c88-4G-o0H" id="twc-aW-Sl7">
-                                    <rect key="frame" x="0.0" y="0.0" width="600" height="195"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="600" height="153"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Information" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bB-Rd-FSM">
@@ -254,11 +254,13 @@
                                         <constraint firstItem="5bB-Rd-FSM" firstAttribute="top" secondItem="twc-aW-Sl7" secondAttribute="topMargin" id="PJ5-8B-GpP"/>
                                         <constraint firstAttribute="bottomMargin" secondItem="AcN-mv-6f1" secondAttribute="bottom" constant="46" id="SV2-NL-B4V"/>
                                         <constraint firstItem="AcN-mv-6f1" firstAttribute="top" secondItem="5bB-Rd-FSM" secondAttribute="bottom" constant="2" id="Uxq-ct-9AS"/>
+                                        <constraint firstAttribute="bottomMargin" secondItem="AcN-mv-6f1" secondAttribute="bottom" constant="4" id="eIx-45-Sby"/>
                                         <constraint firstItem="5bB-Rd-FSM" firstAttribute="trailing" secondItem="twc-aW-Sl7" secondAttribute="trailingMargin" constant="7" id="gVS-WZ-JY2"/>
                                     </constraints>
                                     <variation key="default">
                                         <mask key="constraints">
                                             <exclude reference="OgP-Qn-8WW"/>
+                                            <exclude reference="SV2-NL-B4V"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -276,7 +278,7 @@
                                 </connections>
                             </tableViewCell>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="EpisodeDetailCell" rowHeight="79" id="YWV-AS-JQp" customClass="EpisodeDescriptionCell" customModule="Showtime" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="451" width="600" height="79"/>
+                                <rect key="frame" x="0.0" y="409" width="600" height="79"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="YWV-AS-JQp" id="KOn-Os-JGs">
                                     <rect key="frame" x="0.0" y="0.0" width="600" height="78"/>

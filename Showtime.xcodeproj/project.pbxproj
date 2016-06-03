@@ -149,10 +149,10 @@
 		A36F4DA31CE5834C00DDFC85 /* TVMovieApp */ = {
 			isa = PBXGroup;
 			children = (
+				A36F4DA91CE5834C00DDFC85 /* MasterViewController.swift */,
 				A3EB3BAF1CEEEE1C004C9D12 /* API */,
 				A36F4DD71CE5863B00DDFC85 /* Models */,
 				A36F4DA41CE5834C00DDFC85 /* AppDelegate.swift */,
-				A36F4DA91CE5834C00DDFC85 /* MasterViewController.swift */,
 				A32031CD1CFBE491001179A3 /* NotificationSystem.swift */,
 				A36F4DB21CE5834C00DDFC85 /* LaunchScreen.storyboard */,
 				A36F4DAD1CE5834C00DDFC85 /* Main.storyboard */,
