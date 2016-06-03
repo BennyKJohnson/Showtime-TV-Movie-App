@@ -185,9 +185,7 @@ class DetailViewController: UITableViewController {
                 if let lastEpisode = show.lastEpisodeToAir {
                     
                     let episodeNum = String(lastEpisode.episodeNumber!)
-                    
                     let seasonNumber = lastEpisode.season!.number.description
-                    
                     let labelStringLastAired = "Last episode aired: "
                     
                     let attributedString = NSMutableAttributedString(string: labelStringLastAired + "Season " + seasonNumber + " Episode " + episodeNum)
